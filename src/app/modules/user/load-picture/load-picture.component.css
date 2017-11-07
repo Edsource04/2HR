@@ -1,0 +1,15 @@
+.img-container{
+    width: 100%; text-align: center;
+    border: 1px solid #DDD;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.loadPicture{
+    width:80%; margin: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.bt-container{
+    text-align: center;
+    margin-top: 10px;
+}

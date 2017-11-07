@@ -1,0 +1,52 @@
+<hr-header></hr-header>
+<div class="container-fluid">
+    <div class=row>
+        <div class="col-sm-3 userSideBar bg-dark">
+           <ul class="list-group text-white bg-dark">
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'view': ['perfil']}}]" class="text-white">Perfil</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'view': ['loadPicture']}}]" class="text-white">Subir Foto</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'view': ['personalInfo']}}]" class="text-white">Informacion Personal</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'view': ['skills']}}]" class="text-white">Añadir Habilidades</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'view': ['language']}}]" class="text-white">Añadir Idiomas</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'view': ['work-experience']}}]" class="text-white">Experiencias Laborales</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'view': ['education']}}]" class="text-white">Educacion</a></li>
+           </ul>
+        </div>
+        <div class="col-sm-9 content">
+                <div class="container dashboardRow">
+                        <div class="row summaryRow">
+                            <div class="col-md-12 col-lg-4">
+                                <div class="card rounded">
+                                    <div class="card-body">
+                                      <span id="spanSolicitudes">0</span>
+                                      <span class="cardText">Aplicaciones</span>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-12 col-lg-4">
+                                <div class="card rounded">
+                                    <div class="card-body">
+                                         <span id="spanMensajes">0</span>
+                                         <span class="cardText">Mensajes</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-4">
+                                <div class="card rounded">
+                                     <div class="card-body">
+                                        <span id="spanEntrevistas">0</span>
+                                        <span class="cardText">Entrevistas</span>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <router-outlet name="view"></router-outlet>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+    
+</div>

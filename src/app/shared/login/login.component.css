@@ -1,0 +1,59 @@
+.signin-body{
+    background-color: #e6f2ff;
+  }
+  
+  .container.signin-container{
+     margin-top: 8%;
+  }
+  
+  .card.signin-card{
+     padding: 40px 0px 20px;
+     background-color: #f4f4f4;
+     box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+     -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+     -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+     
+  }
+  
+  img.signin-img{
+    border-radius: 10%;
+    padding: 0 2rem 2rem;
+    margin: auto;
+    display: block;
+    /*width: 70%;*/
+  }
+  
+  form.signin-form{
+    max-width: 350px;
+    margin: auto;
+  }
+  
+  button.signin-btn{
+     color: #ffffff;
+     background-color: #b2042a;
+     width: 100%;
+     cursor: pointer;
+     margin-bottom: 1.2rem;
+     
+  }
+  
+  a.create-new-account{
+    font-size: 1.2rem;
+    text-align: center;
+    display: block;
+    margin-top: 15px;
+  }
+
+  .ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+  
+  @media screen and (max-width: 680px){
+      a.create-new-account{
+         font-size: 18px;
+      }
+  }
