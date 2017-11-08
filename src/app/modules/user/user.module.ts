@@ -1,3 +1,4 @@
+import { EditableDirective } from './editable.directive';
 import { UserRoutingModule } from './user-routing';
 import { SharedModule } from './../../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
@@ -22,7 +23,7 @@ import { SkillFormComponent } from './skill-form/skill-form.component';
     SharedModule.forRoot(),
     UserRoutingModule
   ],
-  declarations: [PerfilViewComponent, ProfileFormComponent, UserDashboardComponent, LoadPictureComponent, PersonalInformationComponent, LanguageFormComponent, WorkFormComponent, EducationFormComponent, SkillFormComponent],
+  declarations: [PerfilViewComponent, ProfileFormComponent, UserDashboardComponent, LoadPictureComponent, PersonalInformationComponent, LanguageFormComponent, WorkFormComponent, EducationFormComponent, SkillFormComponent, EditableDirective],
   providers: [UserService]
 })
 export class UserModule { }
