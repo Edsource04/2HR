@@ -3,13 +3,13 @@
     <div class="row personalInfo">
       <div class="col"></div>
       <div class="col-6">
-       <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i><input editable [theValue]="profile.currentPosition" type="text" class="form-control" placeholder="Posicion Actual" required id="currentPosition" name="currentPosition" [(ngModel)]="currentPosition" #current="ngModel"><button class="btn btn-default btn-sm bt-edit" (click)="edit($event)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></p>
-       <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i><input [disabled] = "!isEditable" type="text" class="form-control" placeholder="Direccion" id="address" name="address" required [(ngModel)]="address" #add="ngModel">        
-        <button class="btn btn-default btn-sm bt-edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></p>
+       <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i><input editable [theValue]="profile.currentPosition" [disabled] = "profile.currentPosition != ''" type="text" class="form-control" placeholder="Posicion Actual" required id="currentPosition" name="currentPosition" [(ngModel)]="currentPosition" #current="ngModel"><button class="btn btn-default btn-sm bt-edit" (click)="edit(current)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></p>
+       <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i><input [disabled] = "profile.address != ''" type="text" class="form-control" placeholder="Direccion" id="address" name="address" required [(ngModel)]="address" #add="ngModel">        
+        <button class="btn btn-default btn-sm bt-edit" (click) = "edit(add)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></p>
        <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><input type="email" class="form-control" id="email" name="email" placeholder="Corre Electronico" disabled="disabled" required [(ngModel)]="email" [value]="email" #mail></p>
-       <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i><input [disabled] = "!isEditable" type="text" class="form-control" placeholder="Telefono" id="telephone" name="telephone" required [(ngModel)]="telephone" #tel="ngModel">
-        <button class="btn btn-default btn-sm bt-edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></p>
-     <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i><input [disabled] = "!isEditable" type="text" class="form-control" placeholder="Celular" id="cellphone" name="cellphone" required [(ngModel)]="cellphone" #cell="ngModel"><button class="btn btn-default btn-sm bt-edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></p>
+       <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i><input editable [theValue]= "profile.telephone" [disabled] = "profile.telephone != ''" type="text" class="form-control" placeholder="Telefono" id="telephone" name="telephone" required [(ngModel)]="telephone" #tel="ngModel">
+        <button class="btn btn-default btn-sm bt-edit" (click)="edit(tel)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></p>
+     <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i><input [disabled] = "profile.cellphone != ''" type="text" class="form-control" placeholder="Celular" id="cellphone" name="cellphone" required [(ngModel)]="cellphone" #cell="ngModel"><button class="btn btn-default btn-sm bt-edit" (click)="edit(cell)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></p>
       </div>
       <div class="col">
       </div>
