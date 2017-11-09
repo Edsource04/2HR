@@ -46,7 +46,32 @@ export class PersonalInformationComponent implements OnInit {
   }
 
   edit(event){
-     this.el.nativeElement.querySelector('#currentPosition').disabled = false;
+     switch(event.name){
+       case 'currentPosition':
+          if(this.profile.currentPosition)
+            this.profile.currentPosition = '';
+         else
+           this.profile.currentPosition = this.currentPosition;
+         break;
+       case 'telephone':
+           if(this.profile.telephone)
+              this.profile.telephone = '';
+            else
+              this.profile.telephone = this.telephone;
+            break;
+       case 'cellphone':
+            if(this.profile.cellphone)
+               this.profile.cellphone = '';
+            else
+               this.profile.cellphone = this.cellphone;
+            break;
+       case 'address':
+            if(this.profile.address)
+              this.profile.address = '';
+            else
+              this.profile.address = this.address;
+         break;
+     }
   }
 
 }
