@@ -15,6 +15,7 @@ import { LanguageFormComponent } from './language-form/language-form.component';
 import { WorkFormComponent } from './work-form/work-form.component';
 import { EducationFormComponent } from './education-form/education-form.component';
 import { SkillFormComponent } from './skill-form/skill-form.component';
+import { SkillListComponent } from './skill-list/skill-list.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,7 @@ import { SkillFormComponent } from './skill-form/skill-form.component';
     SharedModule.forRoot(),
     UserRoutingModule
   ],
-  declarations: [PerfilViewComponent, ProfileFormComponent, UserDashboardComponent, LoadPictureComponent, PersonalInformationComponent, LanguageFormComponent, WorkFormComponent, EducationFormComponent, SkillFormComponent, EditableDirective],
+  declarations: [PerfilViewComponent, ProfileFormComponent, UserDashboardComponent, LoadPictureComponent, PersonalInformationComponent, LanguageFormComponent, WorkFormComponent, EducationFormComponent, SkillFormComponent, EditableDirective, SkillListComponent],
   providers: [UserService]
 })
 export class UserModule { }
