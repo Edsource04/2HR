@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
    @Input() user?: User;
    @Input() isLoggedIn?: boolean;
    profile: String;
+   dashboard: string;
   constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
@@ -22,6 +23,11 @@ export class HeaderComponent implements OnInit {
         this.user = new User();
         this.user = this.loginService.user;
         this.profile = 'profile/'+this.user._id;
+        if(this.user.role = 'admin'){
+          this.dashboard = "['/admin/dashboard']";
+        }else{
+          this.dashboard = "['user/dashboard'";
+        }
       }
     }
     

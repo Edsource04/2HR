@@ -1,20 +1,20 @@
 <div class="container">   
-  <table class="table">  
-  <thead>    
-    <tr>      
-      <th>#</th>      
-      <th>Habilidad</th>      
-      <th>Porcentaje</th>      
-      <th>Acciones</th>    
-    </tr>  
-  </thead>  
-  <tbody>    
-      <tr>      
-        <th scope="row" *ngFor="let skill of skills; let index = index;">{{index + 1}}</th>
-        <td>{{skill.name}}</td>
-        <td>{{skill.percentage}}%</td>      
-        <td><input class="btn btn-primary" type="button" value="Select"(click)="selectSkill(index)"></td>   
-    </tr> 
-  </tbody>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Habilidad</th>
+        <th scope="col">Percentage</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let skill of skills; let index = index;">
+        <th scope="row">{{index + 1}}</th>
+        <td>{{skill?.name}}</td>
+        <td>{{skill?.percentage}}</td>
+        <td><input type="button" (click)="selectSkill(index)" value="Select" class="btn btn-primary"></td>
+      </tr>
+    </tbody>
   </table>
 </div>
