@@ -1,0 +1,20 @@
+<div class="container">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Porcentage</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let lang of languages; let index = index">
+        <th scope="row">{{index + 1}}</th>
+        <td>{{lang.languageName}}</td>
+        <td>{{lang.percentage}}</td>
+        <td><input type="button" value="Select" class="btn btn-primary" (click)="selectLanguage(index)"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

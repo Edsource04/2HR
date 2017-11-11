@@ -4,10 +4,10 @@
   <div class="row">
     <div class="col"></div>
     <div class="col-sm-6 col-xs-12">
-     <p><input type="text" placeholder="Idioma Natal" class="form-control"></p>
+     <p><input name="languageName" type="text" placeholder="Idioma Natal" class="form-control" [(ngModel)]="selectedLanguage.languageName"></p>
     <div class="w3-light-grey w3-round-xlarge">
     <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%">
-       <select class="form-control">
+       <select class="form-control" [(ngModel)]="selectedLanguage.percentage" name="percentage">
         <option value="100">100%</option>
         <option value="90">90%</option>
         <option value="80">80%</option>
@@ -23,9 +23,12 @@
     <div class="row bt-submit">
       <div class="col"></div>
         <div class="col-sm-6">
+           <br>
            <button class="btn btn-primary btn-block" type="submit">Guardar</button>
         </div>
       <div class="col"></div>
     </div>
 </form>
 </div>
+<br>
+<hr-language-list *ngIf="hasLanguages()" [languages]="languages" (selectLang)="selectLang($event)"></hr-language-list>

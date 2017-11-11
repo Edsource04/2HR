@@ -30,4 +30,6 @@
     </form>
 
 </div>
+<br>
+<hr-skill-list *ngIf="hasKills()" [skills]="skills" (selectSkill)="selectSkill($event)"></hr-skill-list>
 

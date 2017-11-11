@@ -9,20 +9,21 @@ import { Skill } from '../../models/skill';
      
      export class SkillListComponent implements OnInit {   
      
-      @Input() skills: Skill[];  
+      @Input() skills: Skill[] = [];  
       @Output() selectedSkill: EventEmitter<Skill> = new EventEmitter();
+      name: string;
+      percentage: string;
+
+      constructor() { }
       
-      constructor(private userService: UserService) { }
-      
-  ngOnInit() {  }    
+  ngOnInit() {  
+   console.log(this.skills);
+   console.log(this.skills[0].name);
+}    
   
   selectSkill(index){      
   
   this.selectedSkill.emit(this.skills[index]);  
   
   }   
-  
-  hasKills(): boolean{      
-  return this.skills.length > 0;  
-  }
 }
