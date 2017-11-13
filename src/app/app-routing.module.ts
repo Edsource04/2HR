@@ -17,6 +17,9 @@ const routes: Routes = [
     path: 'user-login', loadChildren: './shared/shared.module#SharedModule'
   },
   {
+    path: 'news-jobs', loadChildren: './modules/information/information.module#InformationModule'
+  },
+  {
     path: '**', component: NotFoundComponent
   }
 ];

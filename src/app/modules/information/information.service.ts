@@ -27,6 +27,7 @@ export class InformationService {
   jobPost: Array<JobPost> = [
     {
       _id: 'AAAAA',
+      title: 'concerje - desktop',
       imgSrc: 'assets/job_post/concerge_post.jpg',
       jobDescription: this.jobDescription,
       entryDate: new Date(),
@@ -36,6 +37,7 @@ export class InformationService {
     },{
       _id: 'BBBBB',
       imgSrc: 'assets/job_post/concerge_limpieza.jpg',
+      title: 'concerje - limpieza',
       jobDescription: {
               _id: 'LLLLL',
               functions: 'Conserjería, apertura y cierre del edificio, recepción de visitas, control de mantenimiento básico (cortes de agua, apertura de cerraduras, etc.).',
@@ -61,7 +63,7 @@ export class InformationService {
   ];
 
   constructor() { }
-  getPost(): Observable<JobPost[]>{
+  getPosts(): Observable<JobPost[]>{
     let observable = Observable.create(observer => {
       setTimeout(()=>{
         observer.next(this.jobPost);
