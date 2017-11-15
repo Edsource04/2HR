@@ -22,7 +22,7 @@ import { LanguageListComponent } from './language-list/language-list.component';
   imports: [
     CommonModule,
     FormsModule,
-    SharedModule.forRoot(),
+    SharedModule,
     UserRoutingModule
   ],
   declarations: [PerfilViewComponent, ProfileFormComponent, UserDashboardComponent, LoadPictureComponent, PersonalInformationComponent, LanguageFormComponent, WorkFormComponent, EducationFormComponent, SkillFormComponent, EditableDirective, SkillListComponent, LanguageListComponent],
