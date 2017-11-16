@@ -1,3 +1,36 @@
-<p>
-  education-form works!
-</p>
+<h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Educacion</h2>
+<div class="container">
+ <form>
+  <div class="row">
+    <div class="col-sm-12">
+    <div class="row">
+      <div class="col"></div>
+   <div class="col-sm-2" style="text-align: center;"><input readonly class="form-control-plaintext" type="text" placeholder="Nombre de Escuela" value="Nombre de Escuela: " ></div>
+    <div class="col-sm-7">
+     <input class="form-control" type="text" placeholder="Nombre de Escuela " name="schoolName" [(ngModel)] = "schoolName">
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+
+  <div class="col"></div>
+ <div class="col-sm-5"><h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><input class="form-control" type="date" placeholder="Desde" name="from" [value]="from"></h6></div>
+ <div class="col-sm-5"><h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><input class="form-control" type="date" placeholder="Hasta" name="to" [value]="to"></h6></div>
+  <div class="col"></div>
+<div class="col-sm-12">
+ <input class="form-control" type="text" placeholder="Grado Obtenido" name="grade" [(ngModel)]="grade">
+</div>
+<hr>
+</div>
+  <div class="row">
+      <div class="col"></div>
+      <div class="col-6">
+         <br>
+         <input type="button" (click)="saveEducation()" value="Guardar" class="btn btn-primary btn-block">
+      </div>
+      <div class="col"></div>
+  </div>
+ </form>
+</div>
+<br>
+<hr-education-list [educations]="educations" (selectedEducation)="selectedEdu($event)" *ngIf="hasEducation()"></hr-education-list>

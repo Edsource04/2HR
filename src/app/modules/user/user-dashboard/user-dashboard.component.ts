@@ -1,3 +1,4 @@
+import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-dashboard.component.css']
 })
 export class UserDashboardComponent implements OnInit {
-
-  constructor() { }
+  
+  constructor(public loginService: UserService) { 
+    
+  }
 
   ngOnInit() {
+    
+  }
+
+  isAdmin():boolean{
+    var user = this.loginService.getActualUser();
+    return  (user.role == 'admin' || user.role == 'employee') ? true : false;
+    
   }
 
 }

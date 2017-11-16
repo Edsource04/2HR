@@ -15,13 +15,14 @@ export class HomeComponent implements OnInit {
   password?: String;
   confirmPass?: String;
   userExists: boolean;
+  isAdmin: boolean;
   @Output() sendRegisteredUser = new EventEmitter<User>();
   registeredUser: User;
 
   constructor(public loginService: LoginService, private el: ElementRef) { }
 
   ngOnInit() {
-     this.userExists = false;
+    this.userExists = false;
   }
  
   passwordMatch():boolean{

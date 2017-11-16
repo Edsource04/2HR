@@ -9,7 +9,8 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class LoginService {
   private isLoggedIn: boolean;
-  public user: User;
+  public user?: User;
+  public isAdmin: boolean;
 
   baseUrl: String;
   loginUrl: String;
@@ -31,6 +32,11 @@ export class LoginService {
   }
 
   getUserLoggedIn(): boolean{
+    var loggedUser = JSON.parse(localStorage.getItem('actualUser'));
+      if(loggedUser){
+        this.user = loggedUser.user as User;
+        this.isAdmin = (this.user.role == 'admin' || this.user.role == 'employee') ? true : false;
+      }
     return this.isLoggedIn;
   }
 
@@ -51,6 +57,9 @@ export class LoginService {
              if(returnUser.username){
              this.setLoggedIn();
              this.user = returnUser;
+             this.isAdmin = (returnUser.role == 'admin' || returnUser.role == 'employee') ? true : false;
+             console.log(returnUser);
+
              }
                return res;
             });

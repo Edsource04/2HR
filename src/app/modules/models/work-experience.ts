@@ -5,5 +5,5 @@ export class WorkExperience{
     dateTo?: Date;
     isCurrent: boolean;
     description: String;
-    userId?: String;
+    profile?: String;
 }

@@ -4,6 +4,6 @@ export class Education{
     dateFrom: Date;
     dateTo?: Date;
     gradeObtained: String;
-    userId?: String;
+    profile?: String;
 
 }

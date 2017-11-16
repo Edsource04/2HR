@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <br>
+    <div class="row" *ngFor="let posts of jobPosts; let index = index;">
+        <div class="col-sm-12">
+          <div class="card">
+            <img class="card-img-top" [src]="posts.imgSrc" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">{{posts.title}}</h4>
+              <h6 class="card-subtitle mb-2 text-muted">Por: {{posts.posteredBy}} - {{posts.entryDate | date}}</h6>
+              <p class="card-text">{{posts.jobDescription.functions}}</p>
+              <a [routerLink]="['/news-jobs/posts', index]" class="card-link">Aplicar</a>
+              <a [routerLink]="['/news-jobs/posts', index]" class="card-link">Ver Detalles</a>
+            </div>
+          </div>
+          <br>
+        </div>
+       
+      </div>
+</div>

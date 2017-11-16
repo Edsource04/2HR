@@ -1,7 +1,8 @@
 import { Router } from '@angular/router';
 import { LoginService } from './../services/login.service';
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { User } from '../../models/user';
+
 
 @Component({
   selector: 'hr-header',
@@ -9,25 +10,23 @@ import { User } from '../../models/user';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-   @Input() user?: User;
+   @Input() user?: User = new User();
    @Input() isLoggedIn?: boolean;
    profile: String;
    dashboard: string;
-  constructor(private loginService: LoginService, private router: Router) { }
+   @Input() isAllowed: boolean;
+
+  constructor(private loginService: LoginService, private router: Router, private el: ElementRef) { }
 
   ngOnInit() {
-  
+    console.log(this.isAllowed);
     if(!this.isLoggedIn){
       this.isLoggedIn = this.loginService.getUserLoggedIn();
       if(this.isLoggedIn){
         this.user = new User();
         this.user = this.loginService.user;
         this.profile = 'profile/'+this.user._id;
-        if(this.user.role = 'admin'){
-          this.dashboard = "['/admin/dashboard']";
-        }else{
-          this.dashboard = "['user/dashboard'";
-        }
+        this.isAllowed = (this.user.role == 'admin' || this.user.role == 'employee') ? true : false;
       }
     }
     
@@ -36,7 +35,8 @@ export class HeaderComponent implements OnInit {
   logout(){
     this.loginService.logout();
     this.isLoggedIn = false;
-    this.router.navigate(['']);
+    this.isAllowed = false;
+    this.router.navigate(['/']);
   }
 
   goToProfile(){

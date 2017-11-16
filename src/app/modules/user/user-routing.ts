@@ -13,7 +13,7 @@ import { PersonalInformationComponent } from './personal-information/personal-in
 
 const routes: Routes = [
     {
-      path: 'dashboard', component: UserDashboardComponent, children: [
+      path: 'user-dashboard', component: UserDashboardComponent, children: [
        {
          path: 'perfil', outlet: 'view',component: PerfilViewComponent
        },

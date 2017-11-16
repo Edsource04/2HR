@@ -1,0 +1,24 @@
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre de Escuela</th>
+            <th scope="col">Desde</th>
+            <th scope="col">Hasta</th>
+            <th scope="col">Grado Obtenido</th>
+            <th scope="col">Seleccion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let edu of educations; let index = index">
+            <th scope="row">{{index + 1}}</th>
+            <td>{{edu.schoolName}}</td>
+            <td>{{edu.dateFrom | date}}</td>
+            <td>{{edu.dateTo | date}}</td>
+            <td>{{edu.gradeObtained}}</td>
+            <td><input type="button" value="Select" class="btn btn-primary" (click)="selectEdu(index)"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
