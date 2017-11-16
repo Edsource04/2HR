@@ -1,3 +1,4 @@
+import { AdminModule } from './modules/admin/admin.module';
 import { UserModule } from './modules/user/user.module';
 import { SharedRoutingModule } from './shared/shared-routing';
 import { Router, RouterModule } from '@angular/router';
@@ -30,7 +31,8 @@ import { NotFoundComponent } from './components/not-found-component/not-found-co
     FormsModule,
     HttpModule,
     SharedModule.forRoot(),
-    UserModule
+    UserModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

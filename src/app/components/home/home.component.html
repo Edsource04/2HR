@@ -1,4 +1,4 @@
-<hr-header [user]= loginService.user [isLoggedIn] = loginService.getUserLoggedIn()></hr-header>
+<hr-header [user]= 'loginService.user' [isLoggedIn] = loginService.getUserLoggedIn() [isAllowed]= loginService.isAdmin></hr-header>
 <div class="container-fluid">
   <div class="sectionLight">
     <div class="row">

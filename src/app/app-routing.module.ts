@@ -20,6 +20,9 @@ const routes: Routes = [
     path: 'news-jobs', loadChildren: './modules/information/information.module#InformationModule'
   },
   {
+    path: 'admin', loadChildren: './modules/admin/admin.module#AdminModule'
+  },
+  {
     path: '**', component: NotFoundComponent
   }
 ];
