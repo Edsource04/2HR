@@ -19,8 +19,8 @@ export class JobCenterComponent implements OnInit{
             this.router.navigateByUrl('news-jobs/posts/' + index);
     }
 
-    createForm(){
-        this.router.navigateByUrl('news-jobs/applicant-form');
+    createForm(index: number){
+        this.router.navigateByUrl('news-jobs/applicant-form/'+ index);
     }
 
     editForm(index: number){

@@ -38,12 +38,15 @@ export class LoginComponent implements OnInit {
        localStorage.setItem('actualUser', JSON.stringify({user: response.user, token: response.token}));
 
        console.log(this.user);
+  
        if(this.loginService.getUserLoggedIn()){
            if(this.user.role == 'admin'){
               //router to admin dashboard for now let's redirecto to home
               this.router.navigate(['/admin/admin-dashboard']);
+           }else{
+            this.router.navigate(['/user/user-dashboard']);
            }
-           this.router.navigate(['/user/user-dashboard']);
+           
        }
 
      });

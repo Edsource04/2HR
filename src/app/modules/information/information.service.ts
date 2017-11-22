@@ -28,6 +28,8 @@ export class InformationService {
     {
       _id: 'AAAAA',
       title: 'concerje - desktop',
+      vacantNumber: 'AAA123',
+      category: 'Mantenimiento',
       imgSrc: 'assets/job_post/concerge_post.jpg',
       jobDescription: this.jobDescription,
       entryDate: new Date(),
@@ -36,8 +38,10 @@ export class InformationService {
       status: true
     },{
       _id: 'BBBBB',
-      imgSrc: 'assets/job_post/concerge_limpieza.jpg',
       title: 'concerje - limpieza',
+      vacantNumber: 'BBB123',
+      category: 'Servicio al Cliente',
+      imgSrc: 'assets/job_post/concerge_limpieza.jpg',
       jobDescription: {
               _id: 'LLLLL',
               functions: 'Conserjería, apertura y cierre del edificio, recepción de visitas, control de mantenimiento básico (cortes de agua, apertura de cerraduras, etc.).',
@@ -74,6 +78,19 @@ export class InformationService {
     });
 
     return observable;
+  }
+
+  getPost(index: number): Observable<JobPost>{
+     let obs = Observable.create(obj => {
+         setTimeout(()=>{
+           obj.next(this.jobPost[index]);
+           console.log('One Job Post');
+           obj.complete();
+         }, 2000);
+
+         
+     });
+     return obs;
   }
 }
 

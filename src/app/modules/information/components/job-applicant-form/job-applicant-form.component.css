@@ -1,0 +1,59 @@
+.container > *{
+    font-family: sans-serif;
+    font-size: .9rem;
+}
+.form-header{
+    padding: 20px 0;   
+    text-align: center;
+}
+.p-Title h5{
+   border: 1px solid #0077b3;
+   background-color: #0077b3;
+   color: #fff;
+   border-radius: 5px;
+   padding: 10px;
+}
+.form-control{
+    margin-bottom: 5px;
+}
+.p-personal-information h5{
+    border: 1px solid #0077b3;
+    background-color: #0077b3;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+ }
+
+ table{
+     text-align: center;
+ }
+
+ .idioma tbody label{
+    display: none;
+}
+
+ @media screen and (max-width: 678px){
+     table th span{
+         font-size: .8rem;
+     }
+
+     table tbody tr{
+         width: 100%;
+     }
+     table tbody tr td{
+         display: block;
+     }
+     table tbody tr td input{
+         width: 350px;
+     }
+
+     table thead th:not(:first-child) {
+        display: none;
+    }
+    h5{
+        margin: auto;
+    }
+    .idioma tbody label{
+        display: block;
+    }
+ }

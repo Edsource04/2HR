@@ -8,6 +8,7 @@ import { ListJobPostComponent } from './components/list-job-post/list-job-post.c
 import { Routes, RouterModule} from '@angular/router';
 import { JobApplicantFormComponent } from './components/job-applicant-form/job-applicant-form.component';
 import { JobCenterComponent } from './components/job-center/job-center.component';
+import { FormsModule } from '@angular/forms';
 
 const routers: Routes = [
   {
@@ -25,7 +26,7 @@ const routers: Routes = [
        }
       ]},
     {
-     path: 'applicant-form', component: JobApplicantFormComponent
+     path: 'applicant-form/:index', component: JobApplicantFormComponent
     },
     {
       path: 'applicant-center', component: JobCenterComponent
@@ -35,6 +36,7 @@ const routers: Routes = [
 
 @NgModule({
   imports: [
+    FormsModule,
     CommonModule,
     SharedModule,
     RouterModule.forChild(routers)
