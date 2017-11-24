@@ -27,6 +27,7 @@ import { EducationListComponent } from './education-list/education-list.componen
     UserRoutingModule
   ],
   declarations: [PerfilViewComponent, ProfileFormComponent, UserDashboardComponent, LoadPictureComponent, PersonalInformationComponent, LanguageFormComponent, WorkFormComponent, EducationFormComponent, SkillFormComponent, EditableDirective, SkillListComponent, LanguageListComponent, EducationListComponent],
+  exports: [PerfilViewComponent, ProfileFormComponent, UserDashboardComponent, LoadPictureComponent, PersonalInformationComponent, LanguageFormComponent, WorkFormComponent, EducationFormComponent, SkillFormComponent, EditableDirective, SkillListComponent, LanguageListComponent, EducationListComponent],
   providers: [UserService]
 })
 export class UserModule { }
