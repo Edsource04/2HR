@@ -7,14 +7,14 @@ import { LoadPictureComponent } from './../user/load-picture/load-picture.compon
 import { PerfilViewComponent } from './../user/perfil-view/perfil-view.component';
 import { LanguageFormComponent } from './../user/language-form/language-form.component';
 import { WorkFormComponent } from './../user/work-form/work-form.component';
-import { EducationFormComponent } from './../user/language-form/language-form.component';
+import { EducationFormComponent } from './../user/education-form/education-form.component';
 import { SkillFormComponent } from './../user/skill-form/skill-form.component';
 
 const routes: Routes = [
   {
     path: 'admin-dashboard', component: AdminDashboardComponent, pathMatch: 'full', children: [
       {
-        path: 'application-form-view', component: JobApplicationFormView, router: 'view'
+        path: 'application-form-view', component: JobApplicationFormView, outlet: 'view'
       },
       {           
         path: 'perfil', outlet: 'view',component: PerfilViewComponent 

@@ -8,7 +8,7 @@ import { Location } from '@angular/common';
 @Component({
     selector: 'hr-job-applicant-view',
     templateUrl: './job-applicant-view.component.html',
-    styleUrls: ['./job-applicant-view.component.css']
+    styleUrls: ['./job-applicant-view.component.css'],
 })
 
 export class JobApplicantViewComponent implements OnInit{

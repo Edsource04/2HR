@@ -3,7 +3,7 @@ import { AdminRoutingModule } from './admin-routing.modules';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
-import { JobApplicationFormView } from './../information/components/job-application-form-view/job-application-form-view.ts';
+import { JobApplicationFormView } from './../information/components/job-application-form-view/job-application-form-view';
 
 @NgModule({
   imports: [

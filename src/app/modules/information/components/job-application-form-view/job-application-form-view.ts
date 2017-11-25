@@ -6,11 +6,12 @@ import { Application,
          WorkExpApplication, 
          SkillApplication, 
          LanguageApplication, 
-         PersonalReference } from '../../models/application.ts';
+         PersonalReference,
+        } from './../../models/application';
 
 @Component({
    selector: 'hr-job-application-form-view',
-   templateUrl: './job-application-form-view.html';
+   templateUrl: './job-application-form-view.html',
    styleUrls: ['./job-application-form-view.css']
 })
 

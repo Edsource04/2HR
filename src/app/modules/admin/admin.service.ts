@@ -6,14 +6,14 @@ import { Application,         
          WorkExpApplication,          
          SkillApplication,          
          LanguageApplication,          
-         PersonalReference } from '../information/models/application.ts';
+         PersonalReference } from './../information/models/application';
          
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AdminService{
      
-     applications: Array<Application> = [
+    /* applications: Array<Application> = [
          {
            _id: 'AAA1234',
            positionTitle: 'concerje-dektop',
@@ -23,7 +23,7 @@ export class AdminService{
            lastName: 'Rivera Nolasco',
            firstName: 'Edgar Yovanni',
            nationality: 'Dominicana',
-           birthday: new Date(1983, 11, 4);
+           birthday: new Date(1983, 11, 4),
            address: 'Respaldo la Milagrosa #22 los Guandules',
            email: 'ing_edgar_rivera@hotmail.com',
            telephone: '8096210897',
@@ -32,10 +32,12 @@ export class AdminService{
            driverLicense: true,
            carOwner: false,
            missionRequired: null,
-           workDays: [WorkDays.monday, Workdays.tuesday, WorkDays.wednesday, WorkDays.thursday, WorkDays.friday],
+           workDays: [WorkDays.monday, WorkDays.tuesday, WorkDays.wednesday, WorkDays.thursday, WorkDays.friday],
            familyMembers: null,
-           educationApplications: [{_id: 'edu111', schoolName: 'IADI', fromDate: new Date(1995, 6, 1), toDate: new Date(1995, 12, 15), gradeObtained: 'Tecnico en Ofimatica'}
-                                   {_id: 'edu222', schoolName: 'Canadian English Institute', new Date(1999, 5, 1), new Date(2012, 12, 20), gradeObtained: 'Advance English'}],
+           educationApplications: [
+             {_id: 'edu111', schoolName: 'IADI', fromDate: new Date(1999, 6, 1), toDate: new Date(2011, 7, 15), gradeObtained: 'Tecnico en Ofimatica'},
+             {_id: 'edu222', schoolName: 'Canadian English Institute', fromDate: new Date(1999, 5, 1), toDate: new Date(2012, 11, 10), gradeObtained: 'Advance English'}
+            ],
            workExpApplications: [{_id: 'wordExp111', position: 'customer service agent', companyName: 'Stream Global Services', fromDate: new Date(2012, 12, 3), toDate: new Date(2013, 10, 29)},
                                  {_id: 'wordExp222', position: 'customer service agent', companyName: 'Teleperformance', fromDate: new Date(2013, 11, 10), toDate: new Date(2014, 4, 10)}],
            skillApplications: [{_id: 'skill111', description: 'C#, Java, TypeScript Programmer', field: 'computer science', finishedDate: new Date(2014, 6, 30), institution: 'UTESA'}],
@@ -46,11 +48,11 @@ export class AdminService{
            presentationLetter: 'Hola, mi nombre es edgar yovanni rivera nolasco y deseo pertenecer a esta famosa empresa y proveer con mis conocimientos para ayudar a la empresa a alcanzar su mission',
            profile: null
          }
-     ];
+     ];*/
      
      constructor(){}
      
-     getApplications(): Observable<Application>{
+    /* getApplications(): Observable<Application>{
                let apps = Observable.create(observer => {
                     setTimeout(()=>{
                          observer.next(this.applications);
@@ -60,5 +62,5 @@ export class AdminService{
                });  
                
                return apps;
-     }
+     }*/
 }
