@@ -21,8 +21,12 @@ export class PerfilViewComponent implements OnInit {
 
   ngOnInit() {
      var user = this.userService.getActualUser();
+     console.log(user);
+     var token = JSON.parse(localStorage.getItem('actualUser'));
+     console.log(token);
     //  this.router.paramMap.switchMap((params: ParamMap) => this.userService.getProfile(params.get('id')))
     //      .subscribe(profile => this.profile = profile);
     this.userService.getProfile(user._id).subscribe(profile => this.profile = profile);
+    console.log(this.profile.imgSrc);
   }
 }

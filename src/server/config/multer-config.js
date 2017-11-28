@@ -5,7 +5,8 @@ var path = require('path');
 var multerConfig = {
     storage: multer.diskStorage({
         destination: function(req, file, next){
-           var _dest = path.join('../assets/profiles/');
+           var _dest = path.join(__dirname, '..', '..','assets', 'profiles');//../assets/profiles/'
+                console.log('destination: ' + _dest);
                 next(null, _dest);
           },
          filename: function(req, file, next){

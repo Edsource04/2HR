@@ -199,6 +199,7 @@ var path = require('path');
 						if(err) throw err;
 						
 		               if(req.file){
+						   
 					   req.body.imgSrc = req.file.filename;
                       }
 				   
@@ -230,33 +231,36 @@ var path = require('path');
 				  }
 				  
                    if(req.file){
-					   
-					   Profile.findOne({_id: ObjectID(req.body.profile)}, (err, profile)=>{
+					   Profile.findById({_id: ObjectID(req.body.profile)}, (err, profile)=>{
                                if(err){
 								   res.status(500).send(err);
 							   }
 							   if(profile.imgSrc){
-								   fs.unlink(path.join('..', profile.imgSrc), (err) =>{
+								   console.log(path.join(__dirname,'..','..', profile.imgSrc));
+								   fs.unlink(path.join(__dirname,'..','..', profile.imgSrc), (err) =>{
 											if(err){
 												throw err;
 											}
-											else{
-												var _imgSrc = path.join('assets/profiles', req.file.filename);
-												profile.imgSrc = _imgSrc;
-												profile.save().then((err, doc)=>{
-													if(err) throw err;
-													res.status(201).send({userPicture: doc.imgSrc});
-												});
-											}
+										
+								   });
+
+								   var _imgSrc = path.join('assets/profiles', req.file.filename);
+								   profile.imgSrc = _imgSrc;
+								   profile.save((err, doc) => {
+									if(err){
+										res.status(500).send(err);
+									}
+									res.status(201).send({userPicture: _imgSrc});
 								   });
 							   }
 							   else{
 								        var _imgSrc = path.join('assets/profiles', req.file.filename);
-										profile.update({_id: ObjectID(profile._id)}, {$set: {imgSrc: _imgSrc}}, (err, ok) =>{
-											if(err){
-												res.status(500).send(err);
-											}
-											res.status(201).send({userPicture: _imgSrc});
+										profile.imgSrc = _imgSrc;
+										profile.save((err, doc) => {
+										 if(err){
+											 res.status(500).send(err);
+										 }
+										 res.status(201).send({userPicture: _imgSrc});
 										});
 							   }
 							   
