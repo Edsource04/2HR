@@ -3,7 +3,6 @@ _id?: string;
 schoolName?: string;   
 fromDate?: Date;   
 toDate?: Date;   
-gradeObtained?: 
-string;
+gradeObtained?: string;
 
 }
