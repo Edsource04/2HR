@@ -5,6 +5,7 @@ import { EducationApplication } from './education-application';
 import { WorkExpApplication } from './work-experience-application';
 import { SkillApplication } from './skill-application';
 import { LanguageApplication } from './language-application';
+import { PersonalReference } from './personal-reference';
 
 export class Application{
    _id?: string;
@@ -33,11 +34,4 @@ export class Application{
    personalReferences?: Array<PersonalReference>;
    presentationLetter?: string;
    profile?: Profile;
-}
-
-export class PersonalReference{
-   _id?: string;
-   fullname?: string;
-   relationship?: string;
-   contactNumber?: string
 }
