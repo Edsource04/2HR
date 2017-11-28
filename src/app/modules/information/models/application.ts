@@ -2,6 +2,7 @@ import { Profile } from '../../models/profile';
 import { WorkDays } from './workdays';
 import { FamilyMember } from './family-member';
 import { EducationApplication } from './education-application';
+import { WorkExpApplication } from './work-experience-application';
 
 export class Application{
    _id?: string;
@@ -30,14 +31,6 @@ export class Application{
    personalReferences?: Array<PersonalReference>;
    presentationLetter?: string;
    profile?: Profile;
-}
-
-export class WorkExpApplication{
-   _id?: string;
-   position?: string;
-   companyName?: string;
-   fromDate?: Date;
-   toDate?: Date;
 }
 
 export class SkillApplication{
