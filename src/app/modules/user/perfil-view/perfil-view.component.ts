@@ -15,7 +15,7 @@ import { Profile } from './../../models/profile';
 export class PerfilViewComponent implements OnInit {
   
   actualUser: User;
-  profile: Profile = new Profile();
+  profile: Profile;
   constructor(private userService: UserService,
               private router: ActivatedRoute) { }
 
@@ -26,7 +26,11 @@ export class PerfilViewComponent implements OnInit {
      console.log(token);
     //  this.router.paramMap.switchMap((params: ParamMap) => this.userService.getProfile(params.get('id')))
     //      .subscribe(profile => this.profile = profile);
-    this.userService.getProfile(user._id).subscribe(profile => this.profile = profile);
-    console.log(this.profile.imgSrc);
+    this.userService.getProfile(user._id).subscribe((profile) => {
+      if(profile){
+        this.profile = profile;
+      }
+    });
+    
   }
 }

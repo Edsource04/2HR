@@ -1,3 +1,4 @@
+import { UserModule } from './../user/user.module';
 import { SharedModule } from './../../shared/shared.module';
 import { AdminRoutingModule } from './admin-routing.modules';
 import { NgModule } from '@angular/core';
@@ -9,7 +10,8 @@ import { JobApplicationFormView } from './../information/components/job-applicat
   imports: [
     CommonModule,
     AdminRoutingModule,
-    SharedModule.forRoot()
+    SharedModule.forRoot(),
+    UserModule
   ],
   declarations: [AdminDashboardComponent, JobApplicationFormView],
   exports: [AdminDashboardComponent, JobApplicationFormView]

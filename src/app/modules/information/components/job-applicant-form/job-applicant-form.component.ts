@@ -21,6 +21,11 @@ export class JobApplicantFormComponent implements OnInit{
     ngOnInit(){
       this.firstName = '';
       this.carOwner = false;
-      this.infoService.getPost(this.route.snapshot.params.index).subscribe(res => this.currentPost = res);
+      if(this.route.snapshot.params.index){
+        this.infoService.getPost(this.route.snapshot.params.index).subscribe(res => this.currentPost = res);
+      }else{
+          this.currentPost = {};
+      }
+      
     }
 }

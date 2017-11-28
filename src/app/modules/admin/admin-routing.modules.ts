@@ -12,30 +12,30 @@ import { SkillFormComponent } from './../user/skill-form/skill-form.component';
 
 const routes: Routes = [
   {
-    path: 'admin-dashboard', component: AdminDashboardComponent, pathMatch: 'full', children: [
+    path: 'admin-dashboard', component: AdminDashboardComponent, children: [
       {
         path: 'application-form-view', component: JobApplicationFormView, outlet: 'view'
       },
       {           
-        path: 'perfil', outlet: 'view',component: PerfilViewComponent 
+        path: 'perfil', outlet: 'admin',component: PerfilViewComponent 
       },        
       {           
-        path: 'personalInfo', outlet: 'view', component: PersonalInformationComponent         
+        path: 'personalInfo', outlet: 'admin', component: PersonalInformationComponent         
       },        
       { 
-        path: 'loadPicture', outlet: 'view', component: LoadPictureComponent 
+        path: 'loadPicture', outlet: 'admin', component: LoadPictureComponent 
       },         
       {           
-        path: 'language', outlet: 'view', component: LanguageFormComponent         
+        path: 'language', outlet: 'admin', component: LanguageFormComponent         
       },         
       {           
-        path: 'work-experience', outlet: 'view', component: WorkFormComponent      
+        path: 'work-experience', outlet: 'admin', component: WorkFormComponent      
       },       
       {          
-        path: 'education', outlet: 'view', component: EducationFormComponent       
+        path: 'education', outlet: 'admin', component: EducationFormComponent       
       },         
       {           
-        path: 'skills', outlet: 'view', component: SkillFormComponent       
+        path: 'skills', outlet: 'admin', component: SkillFormComponent       
       } 
     ]
   }

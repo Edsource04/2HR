@@ -25,18 +25,23 @@ export class LoadPictureComponent implements OnInit {
 
       this.user = loggedUser.user as User;
       this.userService.getProfile(this.user._id).subscribe((profile) => {
-         this.profile._id = profile._id;
-         this.profile.address = profile.address;
-         this.profile.cellphone = profile.cellphone;
-         this.profile.currentPosition = profile.currentPosition;
-         this.profile.educations = profile.educations;
-         this.profile.email = profile.email;
-         this.profile.fullname = profile.fullname;
-         this.profile.imgSrc = profile.imgSrc;
-         this.profile.languages = profile.languages;
-         this.profile.telephone = profile.telephone;
-         this.profile.workExperiences = profile.workExperiences;
-         this.userPicture = (profile.imgSrc as string);
+         if(profile){
+          this.profile._id = profile._id;
+          this.profile.address = profile.address;
+          this.profile.cellphone = profile.cellphone;
+          this.profile.currentPosition = profile.currentPosition;
+          this.profile.educations = profile.educations;
+          this.profile.email = profile.email;
+          this.profile.fullname = profile.fullname;
+          this.profile.imgSrc = profile.imgSrc;
+          this.profile.languages = profile.languages;
+          this.profile.telephone = profile.telephone;
+          this.profile.workExperiences = profile.workExperiences;
+          this.userPicture = (profile.imgSrc as string);
+         }else{
+           this.userPicture = 'assets/loadPicture.jpg';
+         }
+       
       }, (error) => {
         console.log(error);
       });

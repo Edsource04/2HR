@@ -3,17 +3,17 @@
     <div class=row>
         <div class="col-sm-3 userSideBar bg-dark">
            <ul class="list-group text-white bg-dark">
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'view': ['perfil']}}]" class="text-white">Perfil</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'view': ['loadPicture']}}]" class="text-white">Subir Foto</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'view': ['personalInfo']}}]" class="text-white">Informacion Personal</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'view': ['skills']}}]" class="text-white">Añadir Habilidades</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'view': ['language']}}]" class="text-white">Añadir Idiomas</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'view': ['work-experience']}}]" class="text-white">Experiencias Laborales</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'view': ['education']}}]" class="text-white">Educacion</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'view': ['education']}}]" class="text-white">Entrevistas</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'view': ['education']}}]" class="text-white">Empleados</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'view': ['education']}}]" class="text-white">Mensajes</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'view': ['education']}}]" class="text-white">Aplicaciones</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['perfil']}}]" class="text-white">Perfil</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['loadPicture']}}]" class="text-white">Subir Foto</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['personalInfo']}}]" class="text-white">Informacion Personal</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['skills']}}]" class="text-white">Añadir Habilidades</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['language']}}]" class="text-white">Añadir Idiomas</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['work-experience']}}]" class="text-white">Experiencias Laborales</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['education']}}]" class="text-white">Educacion</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['education']}}]" class="text-white">Entrevistas</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['education']}}]" class="text-white">Empleados</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['education']}}]" class="text-white">Mensajes</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['education']}}]" class="text-white">Aplicaciones</a></li>
            </ul>
         </div>
         <div class="col-sm-9 content">
@@ -46,7 +46,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <router-outlet name="view"></router-outlet>
+                                <router-outlet name="admin"></router-outlet>
                             </div>
                         </div>
                     </div>
