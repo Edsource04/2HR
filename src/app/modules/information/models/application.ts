@@ -4,6 +4,7 @@ import { FamilyMember } from './family-member';
 import { EducationApplication } from './education-application';
 import { WorkExpApplication } from './work-experience-application';
 import { SkillApplication } from './skill-application';
+import { LanguageApplication } from './language-application';
 
 export class Application{
    _id?: string;
@@ -32,16 +33,6 @@ export class Application{
    personalReferences?: Array<PersonalReference>;
    presentationLetter?: string;
    profile?: Profile;
-}
-
-
-export class LanguageApplication{
-   _id?: string;
-   languageName?: string;
-   speak?: number;
-   read?: number;
-   write?: number;
-   
 }
 
 export class PersonalReference{
