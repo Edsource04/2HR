@@ -1,6 +1,7 @@
 import { Profile } from '../../models/profile';
 import { WorkDays } from './workdays';
 import { FamilyMember } from './family-member';
+import { EducationApplication } from './education-application';
 
 export class Application{
    _id?: string;
@@ -29,14 +30,6 @@ export class Application{
    personalReferences?: Array<PersonalReference>;
    presentationLetter?: string;
    profile?: Profile;
-}
-
-export class EducationApplication{
-   _id?: string;
-   schoolName?: string;
-   fromDate?: Date;
-   toDate?: Date;
-   gradeObtained?: string;
 }
 
 export class WorkExpApplication{
