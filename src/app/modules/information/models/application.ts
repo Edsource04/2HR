@@ -1,4 +1,5 @@
 import { Profile } from '../../models/profile';
+import { WorkDays } from './workdays';
 
 export class Application{
    _id?: string;
@@ -27,16 +28,6 @@ export class Application{
    personalReferences?: Array<PersonalReference>;
    presentationLetter?: string;
    profile?: Profile;
-}
-
-export enum WorkDays{
-   sunday = 1,
-   monday = 2,
-   tuesday = 3,
-   wednesday = 4,
-   thursday = 5,
-   friday = 6,
-   saturday = 7
 }
 
 export class FamilyMember{
