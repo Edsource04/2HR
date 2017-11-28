@@ -1,5 +1,6 @@
 import { Profile } from '../../models/profile';
 import { WorkDays } from './workdays';
+import { FamilyMember } from './family-member';
 
 export class Application{
    _id?: string;
@@ -28,14 +29,6 @@ export class Application{
    personalReferences?: Array<PersonalReference>;
    presentationLetter?: string;
    profile?: Profile;
-}
-
-export class FamilyMember{
-   _id?: string;
-   name?: string;
-   relationship?: string;
-   position?: string;
-   department?: string;
 }
 
 export class EducationApplication{
