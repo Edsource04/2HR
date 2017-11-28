@@ -3,6 +3,7 @@ import { WorkDays } from './workdays';
 import { FamilyMember } from './family-member';
 import { EducationApplication } from './education-application';
 import { WorkExpApplication } from './work-experience-application';
+import { SkillApplication } from './skill-application';
 
 export class Application{
    _id?: string;
@@ -33,13 +34,6 @@ export class Application{
    profile?: Profile;
 }
 
-export class SkillApplication{
-   _id?: string;
-   description?: string;
-   field?: string;
-   finishedDate?: Date;
-   institution?: string;
-}
 
 export class LanguageApplication{
    _id?: string;
