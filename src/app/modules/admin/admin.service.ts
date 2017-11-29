@@ -9,6 +9,7 @@ import { WorkExpApplication } from './../information/models/work-experience-appl
 import { WorkDays } from './../information/models/workdays';
          
 import { Observable } from 'rxjs/Observable';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Injectable()
 export class AdminService{
@@ -23,7 +24,7 @@ export class AdminService{
            lastName: 'Rivera Nolasco',
            firstName: 'Edgar Yovanni',
            nationality: 'Dominicana',
-           birthday: new Date(1983, 11, 4),
+           birthday: new Date(1983, 10, 4),
            address: 'Respaldo la Milagrosa #22 los Guandules',
            email: 'ing_edgar_rivera@hotmail.com',
            telephone: '8096210897',
@@ -46,13 +47,14 @@ export class AdminService{
            personalReferences: [{_id: 'pers111', fullname: 'carlos cruz cuello', relationship: 'pastor', contactNumber: '8094568795'},
                                 {_id: 'pers222', fullname: 'Wellington Bido', relationship: 'Reporting Manager', contactNumber: '8294789632'}],
            presentationLetter: 'Hola, mi nombre es edgar yovanni rivera nolasco y deseo pertenecer a esta famosa empresa y proveer con mis conocimientos para ayudar a la empresa a alcanzar su mission',
+           status: false,
            profile: null
          }
      ];
      
      constructor(){}
      
-    getApplications(): Observable<Application>{
+    getApplications(): Observable<Application[]>{
                let apps = Observable.create(observer => {
                     setTimeout(()=>{
                          observer.next(this.applications);
@@ -62,5 +64,21 @@ export class AdminService{
                });  
                
                return apps;
+     }
+
+     getApplication(id: string): Observable<Application>{
+           let current = Observable.create( observer =>{
+             setTimeout(()=>{
+               for(var app in this.applications){
+                    if(this.applications[app]._id == id){
+                      observer.next(this.applications[app]);
+                    }
+               }
+             }, 2000);
+
+            
+           });
+
+           return current;
      }
 }

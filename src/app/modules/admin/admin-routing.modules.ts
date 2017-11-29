@@ -9,6 +9,7 @@ import { LanguageFormComponent } from './../user/language-form/language-form.com
 import { WorkFormComponent } from './../user/work-form/work-form.component';
 import { EducationFormComponent } from './../user/education-form/education-form.component';
 import { SkillFormComponent } from './../user/skill-form/skill-form.component';
+import { JobApplicantViewComponent } from '../information/components/job-applicant-view/job-applicant-view.component';
 
 const routes: Routes = [
   {
@@ -36,7 +37,10 @@ const routes: Routes = [
       },         
       {           
         path: 'skills', outlet: 'admin', component: SkillFormComponent       
-      } 
+      },
+      {
+        path: 'applications/:id', outlet: 'admin', component: JobApplicationFormView
+      }
     ]
   }
 ];

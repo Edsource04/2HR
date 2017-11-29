@@ -33,5 +33,6 @@ export class Application{
    languageApplications?: Array<LanguageApplication>;
    personalReferences?: Array<PersonalReference>;
    presentationLetter?: string;
+   status: boolean;
    profile?: Profile;
 }
