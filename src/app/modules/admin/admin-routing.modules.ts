@@ -1,3 +1,4 @@
+import { ApplicationListComponent } from './components/application-list/application-list.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { NgModule} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -10,10 +11,14 @@ import { WorkFormComponent } from './../user/work-form/work-form.component';
 import { EducationFormComponent } from './../user/education-form/education-form.component';
 import { SkillFormComponent } from './../user/skill-form/skill-form.component';
 import { JobApplicantViewComponent } from '../information/components/job-applicant-view/job-applicant-view.component';
+import { DummyComponent } from './components/dummy/dummy.component';
 
 const routes: Routes = [
   {
     path: 'admin-dashboard', component: AdminDashboardComponent, children: [
+      {
+         path: 'clear', component: DummyComponent
+      },
       {
         path: 'application-form-view', component: JobApplicationFormView, outlet: 'view'
       },
@@ -39,8 +44,11 @@ const routes: Routes = [
         path: 'skills', outlet: 'admin', component: SkillFormComponent       
       },
       {
+        path: 'applications', outlet: 'admin', component: ApplicationListComponent
+      },
+      {
         path: 'applications/:id', outlet: 'admin', component: JobApplicationFormView
-      }
+      } 
     ]
   }
 ];

@@ -19,6 +19,8 @@ export class ApplicationListComponent implements OnInit{
    }
    
    viewApplication(id: string){
-      this.router.navigate(['{'admin': ['applications', '+id+']}}]" ']);
+       console.log(id);
+       setTimeout(()=> this.router.navigate([`admin/admin-dashboard`, {outlets: {admin: null}}]));
+      
    }
 }

@@ -7,6 +7,8 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { JobApplicationFormView } from './../information/components/job-application-form-view/job-application-form-view';
 import { FormsModule } from '@angular/forms';
 import { AdminService } from './admin.service';
+import { ApplicationListComponent } from './components/application-list/application-list.component';
+import { DummyComponent } from './components/dummy/dummy.component';
 
 @NgModule({
   imports: [
@@ -16,7 +18,7 @@ import { AdminService } from './admin.service';
     SharedModule.forRoot(),
     UserModule
   ],
-  declarations: [AdminDashboardComponent, JobApplicationFormView],
+  declarations: [AdminDashboardComponent, JobApplicationFormView, ApplicationListComponent, DummyComponent],
   providers: [AdminService],
   exports: [AdminDashboardComponent, JobApplicationFormView]
 })
