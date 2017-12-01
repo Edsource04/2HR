@@ -47,7 +47,7 @@ const routes: Routes = [
         path: 'applications', outlet: 'admin', component: ApplicationListComponent
       },
       {
-        path: 'applications/:id', outlet: 'admin', component: JobApplicationFormView
+        path: 'applications/:id', component: JobApplicationFormView
       } 
     ]
   }

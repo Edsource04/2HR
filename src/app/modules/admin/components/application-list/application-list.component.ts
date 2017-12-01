@@ -11,16 +11,19 @@ import { Router } from '@angular/router';
 
 export class ApplicationListComponent implements OnInit{
    applications: Array<Application>;
-   
+   show: boolean;
+
    constructor(private adminService: AdminService, private router: Router){}
    
    ngOnInit(){
+       this.show = true;
       this.adminService.getApplications().subscribe(app => this.applications = app);
    }
    
    viewApplication(id: string){
        console.log(id);
-       setTimeout(()=> this.router.navigate([`admin/admin-dashboard`, {outlets: {admin: null}}]));
+       this.show = false;
+       this.router.navigate(['admin', 'admin-dashboard', 'applications', id, {outlets: {admin: null}}]);
       
    }
 }
