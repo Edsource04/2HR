@@ -1,3 +1,4 @@
+import { CalendarComponent } from './components/calendar/calendar.component';
 import { ApplicationListComponent } from './components/application-list/application-list.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { NgModule} from '@angular/core';
@@ -48,7 +49,10 @@ const routes: Routes = [
       },
       {
         path: 'applications/:id', component: JobApplicationFormView
-      } 
+      },
+      {
+         path: 'calendar', component: CalendarComponent
+      }
     ]
   }
 ];

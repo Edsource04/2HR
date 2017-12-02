@@ -8,7 +8,7 @@ import { PersonalReference } from './../../models/personal-reference';
 import { SkillApplication } from './../../models/skill-application';
 import { WorkExpApplication } from './../../models/work-experience-application';
 import { AdminService } from './../../../admin/admin.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -23,7 +23,8 @@ export class JobApplicationFormView implements OnInit{
 
    constructor(
            private router: ActivatedRoute,
-           private adminService: AdminService
+           private adminService: AdminService,
+           private calendarRoute: Router
    ){}
    
    ngOnInit(){
@@ -99,5 +100,9 @@ hasSaturday():boolean{
         }
 
         return false;
+}
+
+calendar(){
+    this.calendarRoute.navigate(['admin', 'admin-dashboard', 'calendar', {outlets: {admin: null}}]);
 }
 }

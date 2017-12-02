@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { AdminService } from './admin.service';
 import { ApplicationListComponent } from './components/application-list/application-list.component';
 import { DummyComponent } from './components/dummy/dummy.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { DummyComponent } from './components/dummy/dummy.component';
     SharedModule.forRoot(),
     UserModule
   ],
-  declarations: [AdminDashboardComponent, JobApplicationFormView, ApplicationListComponent, DummyComponent],
+  declarations: [AdminDashboardComponent, JobApplicationFormView, ApplicationListComponent, DummyComponent, CalendarComponent],
   providers: [AdminService],
   exports: [AdminDashboardComponent, JobApplicationFormView]
 })
