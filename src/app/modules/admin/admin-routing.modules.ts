@@ -12,14 +12,10 @@ import { WorkFormComponent } from './../user/work-form/work-form.component';
 import { EducationFormComponent } from './../user/education-form/education-form.component';
 import { SkillFormComponent } from './../user/skill-form/skill-form.component';
 import { JobApplicantViewComponent } from '../information/components/job-applicant-view/job-applicant-view.component';
-import { DummyComponent } from './components/dummy/dummy.component';
 
 const routes: Routes = [
   {
     path: 'admin-dashboard', component: AdminDashboardComponent, children: [
-      {
-         path: 'clear', component: DummyComponent
-      },
       {
         path: 'application-form-view', component: JobApplicationFormView, outlet: 'view'
       },
@@ -52,6 +48,9 @@ const routes: Routes = [
       },
       {
          path: 'calendar', outlet: 'admin',  component: CalendarComponent
+      },
+      {
+        path: 'employees', loadChildren: '../employee/employee.module#EmployeeModule'
       }
     ]
   }

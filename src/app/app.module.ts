@@ -1,3 +1,4 @@
+import { EmployeeModule } from './modules/employee/employee.module';
 import { AdminModule } from './modules/admin/admin.module';
 import { UserModule } from './modules/user/user.module';
 import { SharedRoutingModule } from './shared/shared-routing';
@@ -32,7 +33,8 @@ import { NotFoundComponent } from './components/not-found-component/not-found-co
     HttpModule,
     SharedModule.forRoot(),
     UserModule,
-    AdminModule
+    AdminModule,
+    EmployeeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

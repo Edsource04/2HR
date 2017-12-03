@@ -3,17 +3,17 @@
     <div class=row>
         <div class="col-sm-3 userSideBar bg-dark">
            <ul class="list-group text-white bg-dark">
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['perfil']}}]" class="text-white">Perfil</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['loadPicture']}}]" class="text-white">Subir Foto</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['personalInfo']}}]" class="text-white">Informacion Personal</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['skills']}}]" class="text-white">Añadir Habilidades</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['perfil'], 'primary': null}}]" class="text-white">Perfil</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['loadPicture'], 'primary': null}}]" class="text-white">Subir Foto</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['personalInfo'], 'primary': null}}]" class="text-white">Informacion Personal</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['skills'], 'primary': null}}]" class="text-white">Añadir Habilidades</a></li>
              <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['language']}}]" class="text-white">Añadir Idiomas</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['work-experience']}}]" class="text-white">Experiencias Laborales</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['education']}}]" class="text-white">Educacion</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['applications']}}]" class="text-white">Applicaciones</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['education']}}]" class="text-white">Empleados</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['education']}}]" class="text-white">Mensajes</a></li>
-             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['education']}}]" class="text-white">Amonestaciones</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['work-experience'], 'primary': null}}]" class="text-white">Experiencias Laborales</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['education'], 'primary': null}}]" class="text-white">Educacion</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['applications'], 'primary': null}}]" class="text-white">Applicaciones</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'primary': ['employees'], 'admin': null}}]" class="text-white">Empleados</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['education'], 'primary': null}}]" class="text-white">Mensajes</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['education'], 'primary': null}}]" class="text-white">Amonestaciones</a></li>
            </ul>
         </div>
         <div class="col-sm-9 content">
