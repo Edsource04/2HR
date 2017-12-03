@@ -23,7 +23,10 @@ export class ApplicationListComponent implements OnInit{
    viewApplication(id: string){
        console.log(id);
        this.show = false;
-       this.router.navigate(['admin', 'admin-dashboard', 'applications', id, {outlets: {admin: null}}]);
+       this.router.navigate([{outlets: {admin: null}}]).then((go) =>{
+        this.router.navigate(['admin', 'admin-dashboard', {outlets: {admin: ['apply', id]}}]);
+       });
+       
       
    }
 }

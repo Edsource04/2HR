@@ -103,6 +103,6 @@ hasSaturday():boolean{
 }
 
 calendar(){
-    this.calendarRoute.navigate(['admin', 'admin-dashboard', 'calendar', {outlets: {admin: null}}]);
+    this.calendarRoute.navigate(['admin', 'admin-dashboard', {outlets: {admin: 'calendar'}}]);
 }
 }

@@ -48,10 +48,10 @@ const routes: Routes = [
         path: 'applications', outlet: 'admin', component: ApplicationListComponent
       },
       {
-        path: 'applications/:id', component: JobApplicationFormView
+        path: 'apply/:id', outlet: 'admin', component: JobApplicationFormView
       },
       {
-         path: 'calendar', component: CalendarComponent
+         path: 'calendar', outlet: 'admin',  component: CalendarComponent
       }
     ]
   }
