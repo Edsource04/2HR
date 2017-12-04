@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Employee } from './../../models/employee';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'hr-employee-list',
@@ -11,7 +12,7 @@ export class EmployeeListComponent implements OnInit {
   @Input() employees: Array<Employee>;
   
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
    
@@ -20,6 +21,10 @@ export class EmployeeListComponent implements OnInit {
 
   get show(){
     return this.employees.length > 0;
+  }
+
+  addEmployee(){
+    this.router.navigate(['admin', 'admin-dashboard','employees','add-employee',{outlets: {admin: null}}]);
   }
 
 }

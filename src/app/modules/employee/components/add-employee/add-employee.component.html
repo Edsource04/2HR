@@ -1,0 +1,137 @@
+<h2>Agregar</h2>
+<div class="container">
+   <div class="row">
+       <div class="col-sm-12">
+          <form #addForm= "ngForm" class="form-horizontal">
+          <div class="row">
+            
+              <div class="col-sm-6 col-xs-12">
+                  <div class="form-group">
+                      <label for="firstName" class="label-control">Nombres</label>
+                      <input type="text" class="form-control" [ngModel]="employee.firstName" name="firstName" required placeholder="Nombres" #fName="ngModel">
+                      <div class="alert alert-danger" *ngIf="!fName.valid && !fName.pristine">
+                         Los Nombres son requeridos
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-6 col-xs-12">
+                  <div class="form-group">
+                      <label for="lastName" class="label-control">Apellidos</label>
+                      <input type="text" class="form-control" [ngModel]="employee.lastName" name="lastName" required placeholder="Apellidos" #lName="ngModel">
+                      <div class="alert alert-danger" *ngIf="!lName.valid && !lName.pristine">
+                         Los Apellidos son requeridos
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-6 col-xs-12">
+                  <div class="form-group">
+                      <label for="socialId" class="label-control">Cedula de Identidad</label>
+                      <input type="text" class="form-control" [(ngModel)]="employee.socialId" name="socialId" required placeholder="Cedula de Identidad" #isId="ngModel">
+                      <div class="alert alert-danger" *ngIf="!isId.valid && !isId.pristine">
+                         Los Nombres son requeridos
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-6 col-xs-12">
+                  <div class="form-group">
+                      <label for="birthday" class="label-control">Fecha de Nacimiento</label>
+                      <input type="date" date class="form-control" [(ngModel)]="employee.birth" name="birthday" placeholder="Fecha de Nacimiento" #date="ngModel">
+                      <div class="alert alert-danger" *ngIf="!date.valid && !date.pristine">
+                            Deberia Agregar la Fecha de Nacimiento
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-12">
+                  <div class="form-group">
+                      <label for="address" class="label-control">Direccion</label>
+                      <input type="text" class="form-control" name="address" required placeholder="Direccion de la Casa" [(ngModel)]="employee.address" #addre="ngModel">
+                      <div class="alert alert-danger" *ngIf="!addre.valid && !addre.pristine">
+                               La Direccion es Requerida
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label for="telephone" class="label-control">Telefono</label>
+                    <input type="text" class="form-control" name="telephone" [(ngModel)]="employee.telephone" required #tel="ngModel" placeholder="Telefono de contacto">
+                    <div class="alert alert-danger" *ngIf="!tel.valid && !tel.pristine">
+                        El Telefono es Requirido
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xs-12">
+                 <div class="form-group">
+                    <label for="cellphone" class="label-control">Celular</label>
+                    <input type="text" class="form-control" name="cellphone" [(ngModel)]="employee.cellphone" required #cel="ngModel" placeholder="Telefono de contacto">
+                    <div class="alert alert-danger" *ngIf="!cel.valid && !cel.pristine">
+                        El Celular es Requirido
+                    </div>
+                 </div>
+              </div>
+              <div class="col-sm-3 col-xs-12">
+                  <div class="form-group">
+                      <label for="empNo" class="label-control">No. Empleado</label>
+                      <input type="text" name="empNo" class="form-control" [(ngModel)]="employee.employeeId" required placeholder="Numero de Empleado" #emp="ngModel">
+                      <div class="alert alert-danger" *ngIf="!emp.valid && !emp.pristine">
+                          Numero de Empleado es requerido
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-3 col-xs-12">
+                 <div class="form-group">
+                     <label for="salary" class="label-control">Salario</label>
+                     <input type="text" class="form-control" name="salary" [(ngModel)]="employee.salary" required placeholder="Salario de Empleado" #sal="ngModel">
+                     <div class="alert alert-danger" *ngIf="!sal.valid && !sal.pristine">
+                         El Salario del empleado es requerido
+                     </div>
+                 </div>
+              </div>
+              <div class="col-sm-3 col-xs-12">
+                  <div class="form-group">
+                      <label for="position" class="labe-control">Posicion</label>
+                      <input type="text" class="form-control" name="position" [(ngModel)]="employee.position" required placeholder="Posicion del Empleado" #posi="ngModel">
+                      <div class="alert alert-danger" *ngIf="!posi.valid && !posi.pristine">
+                            La Posicion del empleado es requerida
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-3 col-xs-12">
+                  <div class="form-group">
+                      <label for="department" class="label-control" #selectElement (change)="selectDepartment(selectElement.value)">Departamento</label>
+                       <select class="form-control"  name="department">
+                             <option *ngFor="let dep of departments" >{{dep}}</option>
+                       </select>
+                  </div>
+                </div>
+              <div class="col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block form-control" (click)="addEmployee()" [disabled]="!addForm.valid">Ingresar Empleado</button>
+                </div>
+              </div>
+            
+          </div>
+        </form>
+       </div>
+   </div>
+   <!-- Modal -->
+  <button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#employeeRegistered">Open Modal</button>
+<div class="modal fade" id="employeeRegistered" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Registro De Empleado</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-info">
+             <h1>Empleado Registrado</h1>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="goBack()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
