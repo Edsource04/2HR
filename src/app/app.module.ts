@@ -1,3 +1,4 @@
+import { RequestModule } from './modules/request/request.module';
 import { EmployeeModule } from './modules/employee/employee.module';
 import { AdminModule } from './modules/admin/admin.module';
 import { UserModule } from './modules/user/user.module';
@@ -19,6 +20,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './shared/login/login.component';
 import { NotFoundComponent } from './components/not-found-component/not-found-component.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,8 @@ import { NotFoundComponent } from './components/not-found-component/not-found-co
     SharedModule.forRoot(),
     UserModule,
     AdminModule,
-    EmployeeModule
+    EmployeeModule,
+    RequestModule
   ],
   providers: [],
   bootstrap: [AppComponent]
