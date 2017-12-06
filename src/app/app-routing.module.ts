@@ -26,6 +26,9 @@ const routes: Routes = [
     path: 'applying', loadChildren: './modules/request/request.module#RequestModule'
   },
   {
+    path: 'sending', loadChildren: './modules/request/request.module#RequestModule'
+  },
+  {
     path: '**', component: NotFoundComponent
   }
 ];
