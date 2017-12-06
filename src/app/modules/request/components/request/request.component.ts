@@ -18,8 +18,10 @@ export class RequestComponent implements OnInit {
    this.submittedBy = actualUser.user.username;
   }
 
-  selectForm(selectedForm: string){
+  selectForm(selectedForm){
+      console.log(selectedForm);
       this.form = selectedForm;
+      console.log(this.form);
   }
 
 }
