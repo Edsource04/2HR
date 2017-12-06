@@ -1,3 +1,59 @@
-<p>
-  permise works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Solicitar Salidas</h2>
+      <hr>
+      <form #loaForm="ngForm">
+        <div class="row">
+          <div class="col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="label-control" for="empNumber">No. Empleado</label>
+              <input type="text" class="form-control" name="empNumber" [(ngModel)]="empNumber">
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="label-control" for="submittedBy">Sometido Por</label>
+              <input class="form-control" name="submittedBy" type="text" [(ngModel)]="submittedBy"> 
+            </div>
+          </div>
+            <div class="col-sm-6 col-xs-12">            
+              <div class="form-group">              
+                <label class="label-control" for="fullname">Nombre Completo</label>              
+                <input type="text" class="form-control" name="fullname" [(ngModel)]="fullname">            
+              </div>          
+          </div>          
+          <div class="col-sm-6 col-xs-12">            
+            <div class="form-group">              
+              <label class="label-control" for="manager">Supervisor</label>              
+              <input class="form-control" name="manager" type="text" [(ngModel)]="manager">             
+            </div>          
+          </div>
+            <div class="col-sm-6 col-xs-12"> 
+              <div class="form-group">             
+                <label class="label-control" for="department">Departamento</label>              
+                <input type="text" class="form-control" name="department" [(ngModel)]="department">            
+              </div>          
+          </div>          
+          <div class="col-sm-6 col-xs-12">            
+            <div class="form-group">              
+              <label class="label-control" for="leaveDate">Fecha de Partida</label>              
+              <input class="form-control" name="leaveDate" type="date" [(ngModel)]="leaveDate">             
+            </div>          
+          </div>
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label for="description" class="label-control">Descripcion</label>
+              <textarea class="form-control" cols="30" rows="10" [(ngModel)] = "description" name="description"></textarea>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="form-group">
+              <button (click)="sendRequest()" type="submit">Enviar Solicitud</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
