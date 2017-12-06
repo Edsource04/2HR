@@ -1,3 +1,4 @@
+import { PerfilTreeComponent } from './perfil-tree/perfil-tree.component';
 import { NgModule } from '@angular/core';
 import{ Routes, RouterModule} from '@angular/router';
 
@@ -34,6 +35,9 @@ const routes: Routes = [
        },
        {
          path: 'skills', outlet: 'view', component: SkillFormComponent
+       },
+       {
+         path: 'tree', outlet: 'view', component: PerfilTreeComponent
        }
       ]
     }

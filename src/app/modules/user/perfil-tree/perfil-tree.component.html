@@ -1,0 +1,49 @@
+<div class="container">
+   <div class="row">
+      <div class="col-sm-4">
+        <ul id="tree1">
+           <li><a (click)="toggleExpand()" id="linkHeader"><i *ngIf="expand == true" class="fa fa-minus-circle" aria-hidden="true"></i><i *ngIf="expand == false" class="fa fa-plus-circle" aria-hidden="true"></i> {{profile.fullname}}</a>
+             <ul *ngIf="expand">
+               <li style="margin-bottom: 0; padding-bottom: 0;">{{profile.currentPosition}}</li>
+               <li>{{profile.email}}</li>
+               <li>{{profile.address}}</li>
+               <li>{{profile.telephone}}</li>
+               <li>{{profile.cellphone}}</li>
+             </ul>
+          </li>
+          <li><a (click)="toggleSkill()" id="skillHeader"><i *ngIf="expandSkill == true" class="fa fa-minus-circle" aria-hidden="true"></i><i *ngIf="expandSkill == false" class="fa fa-plus-circle" aria-hidden="true"></i> Skills</a>
+              <div *ngIf="expandSkill">
+                <ul *ngFor="let skill of profile.skills" >
+                  <li>{{skill.name}}</li>
+                  <li>{{skill.percentage}}</li>
+             </ul>
+              </div>
+          </li>
+          <li><a (click)="toggleLanguage()" id="languageHeader"><i *ngIf="expandLang == true" class="fa fa-minus-circle" aria-hidden="true"></i><i *ngIf="expandLang == false" class="fa fa-plus-circle" aria-hidden="true"></i> Languages</a>
+              <div *ngIf="expandLang">
+                <ul *ngFor="let lang of profile.languages">
+                  <li>{{lang.languageName}}</li>
+                  <li>{{lang.percentage}}</li>
+             </ul>
+              </div>
+          </li>
+          <li>Work Experience
+              <ul *ngFor="let exp of profile.workExperiences">
+                   <li>{{exp.experienceName}}</li>
+                   <li>{{exp.fromDate | date}}</li>
+                   <li>{{exp.toDate | date}}</li>
+              </ul>
+          </li>
+          <li><a (click)="toggleEducation()" id="educationHeader"><i *ngIf="expandEducation == true" class="fa fa-minus-circle" aria-hidden="true"></i><i *ngIf="expandEducation == false" class="fa fa-plus-circle" aria-hidden="true"></i> Educations</a>
+             <div *ngIf="expandEducation">
+              <ul *ngFor="let edu of profile.educations">
+                <li>{{edu.schoolName}}</li>
+                <li>{{edu.fromDate | date}}</li>
+                <li>{{edu.toDate | date}}</li>
+            </ul>
+             </div>
+          </li>
+        </ul>
+      </div>
+   </div>
+</div>

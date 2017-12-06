@@ -1,0 +1,330 @@
+<div class="container">
+    <div class="row" *ngIf="application">
+        <div class="col-sm-12">
+            <h3 class="form-header">Aplicacion de Reclutamiento</h3>
+            <form #applicationForm="ngForm">
+             <div class="form-group p-Title">
+               <h5>Posicion</h5>
+               <div class="row">
+                 <div class="col-sm-6 col-xs-12">
+                     <label class="label-control" for="positionTitle">1. Titulo de Posicion</label>
+                     <input class="form-control" type="text" id="positionTitle" name="positionTitle" placeholder="Titulo" [ngModel]="application.positionTitle" [disabled]="true">
+                   </div>
+                   <div class="col-sm-6 col-xs-12">
+                     <label class="label-control" for="category">2. Categoria</label>
+                     <input class="form-control" type="text" id="category" name="category" placeholder="category" [ngModel]="application.category" [disabled]="true">
+                   </div>
+               </div>
+               <div class="row">
+                 <div class="col-sm-6 col-xs-12">
+                     <label class="label-control" for="vacantNumber">3. Numero de Vacante</label>
+                     <input class="form-control" type="text" id="vacantNumber" name="vacantNumber" placeholder="Numero de Vacante" [ngModel]="application.vacantNumber" [disabled]="true">
+                   </div>
+                   <div class="col-sm-6 col-xs-12">
+                     <label class="label-control" for="availableWordDay">4. Fecha disponible para Trabajar</label>
+                     <input class="form-control" type="text" id="availableWordDay" name="availableWordDay" placeholder="Fecha disponible para trabajar" [ngModel]="application.availableWorkDay | date" [disabled]="true">
+                   </div>
+               </div>
+             </div>
+             <hr>
+             <div class="form-group p-personal-information">
+                 <h5>Informacion Personal</h5>
+                 <div class="row">
+                   <div class="col-sm-6 col-xs-12">
+                       <label class="label-control" for="lastName">5. Apellidos</label>
+                       <input class="form-control" type="text" id="lastName" name="lastName" [ngModel]="application.lastName" disabled>
+                     </div>
+                     <div class="col-sm-6 col-xs-12">
+                       <label class="label-control" for="firstName">6. Nombres</label>
+                       <input class="form-control" type="text" id="firstName" name="firstName" [ngModel]="application.firstName" disabled>
+                     </div>
+                 </div>
+                 <div class="row">
+                   <div class="col-sm-6 col-xs-12">
+                       <label class="label-control" for="nationatity">7. Nacionalidad</label>
+                       <input class="form-control" type="text" id="nationality" name="nationality" [ngModel]="application.nationality" disabled>
+                     </div>
+                     <div class="col-sm-6 col-xs-12">
+                       <label class="label-control" for="birthday">8. Fecha de Nacimiento</label>
+                       <input class="form-control" type="text" id="birthday" name="birthday" [ngModel]="application.birthday | date"  disabled>
+                     </div>
+                     <div class="col-sm-12">
+                         <label class="label-control" for="address">9. Direccion</label>
+                         <textarea class="form-control" rows="4" id="address" name="address" [ngModel]="application.address" disabled></textarea>
+                       </div>
+                     <div class="col-sm-6 col-xs-12">
+                         <label class="label-control" for="contact-number">10. Telefonos de Contacto</label>
+                         <input type="text" class="form-control" id="contact-number" name="contact-number" [ngModel]="application.telephone" disabled>
+                         <input type="text" class="form-control" id="cellphone" name="cellphone" [ngModel]="application.cellphone" disabled>
+                     </div>
+                     <div class="col-sm-6 col-xs-12">
+                         <label class="label-control" for="email">11. Correo Electronico</label>
+                         <input type="email" class="form-control" id="email" name="email" [ngModel]="application.email" disabled>
+                     </div>
+                     <div class="col-sm-6 col-xs-12">
+                         <label class="label-control" for="socialId">12. Cedula de Identidad</label>
+                         <input type="text" class="form-control" id="socialId" name="socialId" [ngModel]="application.socialId" disabled>
+                     </div>
+                     <div class="col-sm-6 col-xs-12">
+                             <div class="row">
+                              <div class="col-sm-6 col-xs-12">
+                                     <label for="driverLicense">13. Tiene Licencia de Conducir?</label>
+                                     <select class="form-control" id="driverLicense" disabled>
+                                       <option [selected]="!application.driverLicense">No</option>
+                                       <option [selected]="application.driverLicense">Si</option>
+                                     </select>
+                              </div>
+                              <div class="col-sm-6 col-xs-12">
+                                     <label for="vehicle">14. Vehiculo Propio?</label>
+                                     <select class="form-control" id="vehicle" disabled>
+                                       <option [selected]="!application.carOwner">No</option>
+                                       <option [selected]="application.carOwner">Si</option>
+                                     </select>
+                              </div>
+                             </div>
+                     </div>
+                     <div class="col-sm-12" *ngIf="application.missionRequired">
+                         <br>
+                         <h5>Si contratado. Existe algun requerimiento especial que desee comunicar para mejorar su labor. porfavor explique</h5>
+                         <textarea class="form-control" rows="4" id="mission-required" name="mission-required" [ngModel]="application.missionRequired" disabled></textarea>
+                     </div>
+                     <div class="col-sm-12">
+                         <br>
+                         <h5>Que dias en la semana esta dispuesto a trabajar para su jornada de trabajo?. Seleccione todas la Que aplican</h5>
+                       <div class="workDays row">
+                            <div class="col"></div>
+                             <div class="col-md-1 col-xs-12">
+                                     <label class="checkbox-inline"><input type="checkbox" [checked]="hasSunday()"> Dom</label>
+                             </div>
+                             <div class="col-md-1 col-xs-12">
+                                     <label class="checkbox-inline"><input type="checkbox" [checked]="hasMonday()"> Lu</label>
+                             </div>
+                             <div class="col-md-1 col-xs-12">
+                                     <label class="checkbox-inline"><input type="checkbox" [checked]="hasTuesday()"> Ma</label>
+                             </div>
+                             <div class="col-md-1 col-xs-12">
+                                     <label class="checkbox-inline"><input type="checkbox" [checked]="hasWednesday()"> Mie</label>
+                             </div>
+                             <div class="col-md-1 col-xs-12">
+                                     <label class="checkbox-inline"><input type="checkbox" [checked]="hasThursday()"> Ju</label>
+                             </div>
+                             <div class="col-md-1 col-xs-12">
+                                     <label class="checkbox-inline"><input type="checkbox" [checked]="hasFriday()"> Vi</label>
+                             </div>
+                             <div class="col-md-1 col-xs-12">
+                                     <label class="checkbox-inline"><input type="checkbox" [checked]="hasSaturday()"> Sa</label>
+                             </div>
+                            <div class="col"></div>
+                       </div>
+                     </div>
+                     <div class="col-sm-12" *ngIf="application.familyMembers">
+                         <br>
+                         <h5>Miembros de la casa en la Empresa</h5>
+                         <div class="table-responsive">
+                                 <table class="table">
+                                         <thead>
+                                             <tr>
+                                                 <th><span>Fila</span></th>
+                                                 <th><span>Nombre</span></th>
+                                                 <th><span>Tipo de Relacion</span></th>
+                                                 <th><span>Posicion</span></th>
+                                                 <th><span>Departamento</span></th>
+                                             </tr>
+                                         </thead>
+                                         <tbody>
+                                                 <tr *ngFor="let member of application.familyMembers; let index = index">
+                                                     <td>{{index + 1</td>
+                                                     <td><input type="text" class="form-control" [value]="member.name" disabled></td>
+                                                     <td><input type="text" class="form-control" [value]="member.relationship" disabled></td>
+                                                     <td><input type="text" class="form-control" [value]="member.position" disabled></td>
+                                                     <td><input type="text" class="form-control" [value]="member.department" disabled></td>
+                                                 </tr>
+                                             </tbody>
+                                     </table>
+                         </div>
+                     </div>
+                     <div class="col-sm-12" *ngIf="application.educations">
+                             <br>
+                             <h5>Educacion</h5>
+                             <table class="table">
+                                 <thead>
+                                     <tr>
+                                         <th>Fila</th>
+                                         <th>Nombre de la Escuela</th>
+                                         <th>Desde</th>
+                                         <th>Hasta</th>
+                                         <th>Grado Obtenido</th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     <tr *ngFor="let edu of application.educations; let index = index">
+                                     <tr>
+                                         <td>{{index + 1</td>
+                                         <td><input class="form-control" type="text" [value]="edu.schoolName" name="schoolName" disabled></td>
+                                         <td><input type="text" class="form-control" [value]="edu.fromDate | date" disabled></td>
+                                         <td><input type="text" class="form-control" [value]="edu.toDate | date" disabled></td>
+                                         <td><input type="text" class="form-control" [value]="edu.gradeObtained" disabled></td>
+                                         </tr>
+                                 </tbody>
+                             </table>
+                         </div>
+                         <div class="col-sm-12" *ngIf="application.workExpApplications.length > 0">
+                                 <br>
+                                 <h5>Experiencia Laboral</h5>
+                                 <table class="table">
+                                     <thead>
+                                         <tr>
+                                             <th>Fila</th>
+                                             <th>Posicion</th>
+                                             <th>Empresa</th>
+                                             <th>Desde</th>
+                                             <th>Hasta</th>
+                                         </tr>
+                                     </thead>
+                                     <tbody>
+                                         <tr *ngFor="let exp of application.workExpApplications; let index = index">
+                                             <td>{{index + 1}}</td>
+                                             <td><input type="text" class="form-control" [value]="exp.position" disabled></td>
+                                             <td><input type="text" class="form-control" [value]="exp.companyName" disabled></td>
+                                             <td><input type="text" class="form-control" [value]="exp.fromDate | date" disabled></td>
+                                             <td><input type="text" class="form-control" [value]="exp.toDate | date" disabled></td>
+                                         </tr>
+                                     </tbody>
+                                 </table>
+                             </div>
+                             <div class="col-sm-12" *ngIf="application.skillApplications">
+                                     <br>
+                                     <h5>Habilidades</h5>
+                                     <table class="table">
+                                         <thead>
+                                             <tr>
+                                                 <th>Fila</th>
+                                                 <th>Descripcion</th>
+                                                 <th>Area/Campo</th>
+                                                 <th>Fecha de Finalizacion</th>
+                                                 <th>Institucion</th>
+                                             </tr>
+                                         </thead>
+                                         <tbody>
+                                             <tr *ngFor="let skill of application.skillApplications; let index=index;">
+                                                 <td>{{index + 1}}</td>
+                                                 <td><input type="text" class="form-control" [value]="skill.description" disabled></td>
+                                                 <td><input type="text" class="form-control" [value]="skill.field" disabled></td>
+                                                 <td><input type="text" class="form-control" [value]="skill.finishedDate" disabled></td>
+                                                 <td><input type="text" class="form-control" [value]="skill.institution" disabled></td>
+                                             </tr>
+                                         </tbody>
+                                     </table>
+                                 </div>
+                                 <div class="col-sm-12" *ngIf="application.languageApplications">
+                                         <br>
+                                         <h5>Idiomas</h5>
+                                         <table class="table idioma">
+                                             <thead>
+                                                 <tr>
+                                                     <th>Fila</th>
+                                                     <th>Idioma</th>
+                                                     <th>Nivel de Habla</th>
+                                                     <th>Nivel de Lectura</th>
+                                                     <th>Nivel de Escritura</th>
+                                                 </tr>
+                                             </thead>
+                                             <tbody>
+                                                 <tr *ngFor="let lang of application.languageApplications; let index = index;">
+                                                     <td>{{index + 1}}</td>
+                                                     <td><input type="text" class="form-control" [value]="lang.languageName" disabled></td>
+                                                      <td>
+                                                              <label for="sel1">Hablado</label>
+                                                              <select class="form-control" id="sel1" disabled>
+                                                               <option [selected]="lang.speak == 100">100%</option>
+                                                               <option [selected]="lang.speak == 90">90%</option>
+                                                               <option [selected]="lang.speak == 80">80%</option>
+                                                               <option [selected]="lang.speak == 50">50%</option>
+                                                             </select>
+                                                      </td>
+                                                      <td>
+                                                             <label for="sel2">Leido</label>
+                                                             <select class="form-control" id="sel2" disabled>
+                                                               <option [selected]="lang.read == 100">100%</option>
+                                                               <option [selected]="lang.read == 90">90%</option>
+                                                               <option [selected]="lang.read == 80">80%</option>
+                                                               <option [selected]="lang.read == 50">50%</option>
+                                                             </select>
+                                                      </td>
+                                              <td>
+                                                   <label for="sel3">Escrito</label>
+                                                <select class="form-control" id="sel3" disabled>
+                                                    <option [selected]="lang.write == 100">100%</option>
+                                                    <option [selected]="lang.write == 90">90%</option>
+                                                    <option [selected]="lang.write == 80">80%</option>
+                                                    <option [selected]="lang.write == 50">50%</option> 
+                                                </select>
+                                              </td>
+                                           </tr>
+                            </tbody>
+                         </table>
+                      </div>
+                      <div class="col-sm-12" *ngIf="application.personalReferences">
+                          <h5>Referencias Personales</h5>
+                          <div class="row" *ngFor="let ref of application.personalRefences; let index = index;">
+                              <div class="col-sm-4 col-xs-12">
+                                  <div class="form-group">
+                                      <label for="refName1" class="label-control">Nombres</label>
+                                      <input type="text" [value]="ref.fullname" class="form-control" id="refName1" disabled>
+                                  </div>
+                              </div>
+                              <div class="col-sm-4 col-xs-12">
+                                  <div class="form-group">
+                                    <label for="refRel1" class="label-control">Relacion</label>
+                                    <input type="text" [value]="ref.relationship" class="form-control" id="refRel1" disabled>
+                                  </div>
+                              </div>
+                              <div class="col-sm-4 col-xs-12">
+                                     <div class="form-group">
+                                       <label for="refCont1" class="label-control">Numero de Contacto</label>
+                                       <input type="text" [value]="ref.contactNumber" class="form-control" id="refCont1" disabled>
+                                     </div>
+                                 </div>
+                          </div>
+                      </div>
+                    <div class="col-sm-12" *ngIf="application.presentationLetter">
+                        <h5>Presentacion</h5>
+                        <div class="form-group">
+                            <label for="letter" class="label-control">Carta de Presentacion</label>
+                            <textarea class="form-control" rows="6" id="letter" name="letter" [ngModel]="application.presentationLetter" disabled></textarea>
+                        </div>
+                    </div>
+                 </div>
+               </div>
+               <hr>
+               <div class="col-sm-12">
+                  <div class="container">
+                      <div class="row">
+                             <div class="col-2"></div>
+                             <div class="col-4 form-group">
+                               <button class="btn btn-primary btn-block" (click)="calendar()">Programar Cita</button>
+                             </div>
+                             <div class="col-4 form-group">
+                                <button class="btn btn-primary btn-block" >Reprobar</button>
+                              </div>
+                             <div class="col-2"></div>
+                      </div>
+                      <div class="row">
+                          <div class="col-12 btn btn-primary"></div>
+                      </div>
+                  </div>
+               </div>
+             </form>
+        </div>
+    </div>
+    <div class="row" *ngIf="!application">
+        <div class="col-sm-12" style="text-align: center;">
+              <br>
+              <br>
+              <br>
+             <div class="loadingImg">
+                  <img src="../../../../../assets/loading.gif" alt="Cargando Informacion....">
+             </div>
+        </div>
+    </div>
+ </div>

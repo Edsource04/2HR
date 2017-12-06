@@ -23,6 +23,12 @@ const routes: Routes = [
     path: 'admin', loadChildren: './modules/admin/admin.module#AdminModule'
   },
   {
+    path: 'applying', loadChildren: './modules/request/request.module#RequestModule'
+  },
+  {
+    path: 'sending', loadChildren: './modules/request/request.module#RequestModule'
+  },
+  {
     path: '**', component: NotFoundComponent
   }
 ];

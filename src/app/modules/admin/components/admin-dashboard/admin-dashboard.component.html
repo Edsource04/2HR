@@ -1,4 +1,57 @@
 <hr-header></hr-header>
-<p>
-  admin-dashboard works!
-</p>
+<div class="container-fluid">
+    <div class=row>
+        <div class="col-sm-3 userSideBar bg-dark">
+           <ul class="list-group text-white bg-dark">
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['perfil'], 'primary': null}}]" class="text-white">Perfil</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['loadPicture'], 'primary': null}}]" class="text-white">Subir Foto</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['personalInfo'], 'primary': null}}]" class="text-white">Informacion Personal</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['skills'], 'primary': null}}]" class="text-white">Añadir Habilidades</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['language']}}]" class="text-white">Añadir Idiomas</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['work-experience'], 'primary': null}}]" class="text-white">Experiencias Laborales</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['education'], 'primary': null}}]" class="text-white">Educacion</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['applications'], 'primary': null}}]" class="text-white">Applicaciones</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'primary': ['employees'], 'admin': null}}]" class="text-white">Empleados</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['education'], 'primary': null}}]" class="text-white">Mensajes</a></li>
+             <li class="list-group-item text-white bg-dark"><a [routerLink]="[{outlets: {'admin': ['education'], 'primary': null}}]" class="text-white">Amonestaciones</a></li>
+           </ul>
+        </div>
+        <div class="col-sm-9 content">
+                <div class="container dashboardRow">
+                        <div class="row summaryRow">
+                            <div class="col-md-12 col-lg-4">
+                                <div class="card rounded">
+                                    <div class="card-body">
+                                      <span id="spanSolicitudes">1</span>
+                                      <span class="cardText">Aplicaciones</span>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-12 col-lg-4">
+                                <div class="card rounded">
+                                    <div class="card-body">
+                                         <span id="spanMensajes">0</span>
+                                         <span class="cardText">Mensajes</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-4">
+                                <div class="card rounded">
+                                     <div class="card-body">
+                                        <span id="spanEntrevistas">0</span>
+                                        <span class="cardText">Entrevistas</span>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <router-outlet name="admin"></router-outlet>
+                                <router-outlet></router-outlet>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+    
+</div>

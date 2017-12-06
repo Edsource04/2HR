@@ -15,14 +15,22 @@ import { Profile } from './../../models/profile';
 export class PerfilViewComponent implements OnInit {
   
   actualUser: User;
-  profile: Profile = new Profile();
+  profile: Profile;
   constructor(private userService: UserService,
               private router: ActivatedRoute) { }
 
   ngOnInit() {
      var user = this.userService.getActualUser();
+     console.log(user);
+     var token = JSON.parse(localStorage.getItem('actualUser'));
+     console.log(token);
     //  this.router.paramMap.switchMap((params: ParamMap) => this.userService.getProfile(params.get('id')))
     //      .subscribe(profile => this.profile = profile);
-    this.userService.getProfile(user._id).subscribe(profile => this.profile = profile);
+    this.userService.getProfile(user._id).subscribe((profile) => {
+      if(profile){
+        this.profile = profile;
+      }
+    });
+    
   }
 }

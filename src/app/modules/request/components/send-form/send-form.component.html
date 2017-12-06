@@ -1,0 +1,52 @@
+<hr-header></hr-header>
+<h2>Envios</h2>
+<div class="container">
+  <div class="row">
+      <div class="col-sm-12">
+          <form>
+              <div class="row">
+                  <div class="col-sm-6 col-xs-12">
+                      <div class="form-group">
+                          <label for="reason" class="label-control">Razon</label>
+                          <select class="form-control" name="reason">
+                              <option value="Seleccionar..">Seleccionar..</option>
+                              <option value="Licencia">Licencia</option>
+                              <option value="Queja">Queja</option>
+                              <option value="Otros">Otros</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 col-xs-12">
+                      <div class="form-group">
+                          <label class="label-control" for="sendBy">Enviado Por</label>
+                          <input type="text" class="form-control" name="sendBy" disabled [ngModel]="sendBy">
+                      </div>
+                  </div>
+                  <div class="col-sm-6 col-xs-12">
+                      <div class="form-group">
+                          <label for="fullname" class="label-control">Nombre Completo</label>
+                          <input type="text" class="form-control">
+                      </div>
+                  </div>
+                  <div class="col-sm-6 col-xs-12">
+                     <div class="form-group">
+                         <label for="attachment" class="label-control">Archivo Adjunto</label>
+                         <input type="file" class="form-control" id="attachment" name="attachment">
+                     </div>
+                  </div>
+                  <div class="col-sm-12">
+                      <div class="form-group">
+                          <label for="description" class="label-control">Description</label>
+                          <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                      </div>
+                  </div>
+                  <div class="offset-xs-1">
+                      <div class="form-group">
+                          <button class="btn btn-primary">Enviar</button>
+                      </div>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>

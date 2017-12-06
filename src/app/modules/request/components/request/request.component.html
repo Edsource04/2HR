@@ -1,0 +1,34 @@
+<hr-header></hr-header>
+<h2>Solicitudes</h2>
+<div class="container">
+  <div class="row">
+       <div class="col-sm-12">
+           <form #requestForm="ngForm">
+               <div class="row">
+                   <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="formType" class="label-control" >Typo de Formulario</label>
+                            <select class="form-control"  name="formType" #selectElement (change)="selectForm(selectElement.value)">
+                                  <option *ngFor="let form of formType" >{{form}}</option>
+                            </select>
+                        </div>
+                   </div>
+                   <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="from" class="label-control">Sometido Por</label>
+                            <input type="text" class="form-control" disabled [ngModel]="submittedBy" name="from">
+                        </div>
+                   </div>
+               </div>
+           </form>
+       </div>
+       <div class="col-sm-12">
+           <!-- Different Forms -->
+           <hr-vacation-form *ngIf="form == 'Vacaciones'"></hr-vacation-form>
+           <hr-license *ngIf="form == 'Licencia'"></hr-license>
+           <hr-permise *ngIf="form == 'Permiso'"></hr-permise>
+           <hr-complains *ngIf="form == 'Queja'"></hr-complains>
+       </div>
+  </div>
+</div>
+

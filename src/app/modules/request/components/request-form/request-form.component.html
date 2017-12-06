@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Vacaciones</h3>
+            <hr>
+            <form #vacacionForm="ngForm" class="form-horizontal">
+               <div class="row">
+                   <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="firstName" class="label-control">Nombre Completo</label>
+                            <input type="text" class="form-control" [(ngModel)]="fullName" name="firstName">
+                       </div>
+                   </div>
+                   <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="empNumber" class="label-control">No. Empleado</label>
+                            <input type="text" class="form-control" [(ngModel)]="empNumber" name="empNumber">
+                       </div>
+                   </div>
+                   <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="manager" class="label-control">Supervisor</label>
+                            <input type="text" class="form-control" [(ngModel)]="manager" name="manager">
+                       </div>
+                   </div>
+                   <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label for="leaveDate" class="label-control">Fecha</label>
+                            <input type="date" class="form-control" [(ngModel)]="leaveDate" name="leaveDate">
+                       </div>
+                   </div>
+                   <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="description" class="label-control">Breve Descripcion</label>
+                            <textarea class="form-control" [(ngModel)]="description" cols="30" rows="10" name="description"></textarea>
+                       </div>
+                   </div>
+                   <div class="col-sm-offset-2">
+                        <div class="form-group">
+                            <button (click)="sendForm()" [disabled]="!vacacionForm.valid && !vacacionForm.pristine" class="btn btn-primary">Someter Formulario</button>
+                       </div>
+                   </div>
+               </div>
+            </form>
+        </div>
+    </div>
+</div>

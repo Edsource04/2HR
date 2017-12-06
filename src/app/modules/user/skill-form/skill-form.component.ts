@@ -18,9 +18,9 @@ export class SkillFormComponent implements OnInit {
   ngOnInit() {
      var user: User = this.userService.getActualUser();
      this.userService.getProfile(user._id).subscribe((profile) => {
-       this.skills = profile.skills;
-       console.log(profile.skills);
-       console.log(this.skills);
+       if(profile){
+         this.skills = profile.skills;
+       }
      })
   }
 

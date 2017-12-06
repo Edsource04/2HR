@@ -1,0 +1,35 @@
+<div class="container"> 
+  <div class="row">    
+    <div class="col-sm-12">      
+      <h2>Someter Queja</h2>      
+      <hr>      
+        <form #complainForm="ngForm">        
+          <div class="row">          
+            <div class="col-sm-6 col-xs-12">            
+              <div class="form-group">              
+                <label class="label-control" for="header">Encabezado</label>              
+                <input type="text" class="form-control" name="header" [(ngModel)]="header">            
+              </div>          
+            </div>          
+            <div class="col-sm-6 col-xs-12">            
+              <div class="form-group">              
+                <label class="label-control" for="atDate">Fecha Actual</label>              
+                <input class="form-control" name="atDate" type="text" [(ngModel)]="atDate" disabled>             
+              </div>          
+            </div>                                                        
+        <div class="col-sm-12">            
+          <div class="form-group">              
+            <label for="description" class="label-control">Descripcion</label>              
+            <textarea class="form-control" cols="30" rows="10" [(ngModel)] = "description" name="description"></textarea>            
+          </div>          
+        </div>          
+        <div class="col-sm-12">            
+          <div class="form-group">              
+            <button (click)="sendComplain()" type="submit">Enviar Queja</button>            
+          </div>          
+         </div>       
+         </div>      
+      </form>    
+    </div>  
+  </div>
+</div>

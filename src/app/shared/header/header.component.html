@@ -10,15 +10,15 @@
         <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['news-jobs/posts']">Aplicaciones</a>
+        <a class="nav-link" [routerLink]="['/news-jobs/posts']">Aplicaciones</a>
       </li>
       <li class="nav-item dropdown" id="hr-dropdown" *ngIf="isAllowed">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Solicitudes
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="applying">Solicitar</a>
-          <a class="dropdown-item" [routerLink]="sending">Enviar</a>
+          <a class="dropdown-item" [routerLink]="['/applying']">Solicitar</a>
+          <a class="dropdown-item" [routerLink]="['/sending/attachment']">Enviar</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" [routerLink]="learning">Aprendizaje</a>
         </div>
