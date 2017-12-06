@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./request.component.css']
 })
 export class RequestComponent implements OnInit {
+  
+  formType: string[] = ['Seleccione el Tipo..','Vacaciones', 'Licencia', 'Permiso', 'Queja'];
+  form: string;
+  submittedBy: string;
 
   constructor() { }
 
   ngOnInit() {
+    var actualUser = JSON.parse(localStorage.getItem('actualUser'));
+   this.submittedBy = actualUser.user.username;
+  }
+
+  selectForm(selectedForm: string){
+      this.form = selectedForm;
   }
 
 }
