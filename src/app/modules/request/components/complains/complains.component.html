@@ -14,7 +14,7 @@
             <div class="col-sm-6 col-xs-12">            
               <div class="form-group">              
                 <label class="label-control" for="atDate">Fecha Actual</label>              
-                <input class="form-control" name="atDate" type="text" [(ngModel)]="atDate" disabled>             
+                <input class="form-control" name="atDate" type="text" [ngModel]="atDate | date" disabled>             
               </div>          
             </div>                                                        
         <div class="col-sm-12">            
@@ -25,7 +25,7 @@
         </div>          
         <div class="col-sm-12">            
           <div class="form-group">              
-            <button (click)="sendComplain()" type="submit">Enviar Queja</button>            
+            <button (click)="sendComplain()" type="submit" class="btn btn-primary">Enviar Queja</button>            
           </div>          
          </div>       
          </div>      
