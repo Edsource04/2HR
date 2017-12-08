@@ -37,8 +37,8 @@
                    </div>
                    <div class="col-sm-offset-2">
                         <div class="form-group">
-                            <button (click)="sendForm()" [disabled]="!vacacionForm.valid && !vacacionForm.pristine" class="btn btn-primary">Someter Formulario</button>
-                       </div>
+                            <button (click)="sendForm()" [disabled]="!vacacionForm.form.valid" class="btn btn-primary">Someter Formulario</button>
+                        </div>
                    </div>
                </div>
             </form>

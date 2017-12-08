@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ToastsManager } from 'ng2-toastr/src/toast-manager';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 
 @Component({
   selector: 'hr-license',
@@ -16,7 +17,9 @@ export class LicenseComponent implements OnInit {
   description: string;
   atDate: Date = new Date();
   
-  constructor() { }
+  constructor(private toast: ToastsManager, private vcr: ViewContainerRef) {
+    this.toast.setRootViewContainerRef(this.vcr);
+   }
 
   ngOnInit() {
     var actualUser = JSON.parse(localStorage.getItem('actualUser'));
@@ -24,6 +27,6 @@ export class LicenseComponent implements OnInit {
   }
  
   sendLicense(){
-  
+      this.toast.success('Hemos Recibido la peticion de Licencia!', 'Formulario Enviado');
   }
 }

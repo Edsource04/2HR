@@ -12,6 +12,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +35,8 @@ import { NotFoundComponent } from './components/not-found-component/not-found-co
     AppRoutingModule,
     FormsModule,
     HttpModule,
+    BrowserAnimationsModule,
+    ToastModule.forRoot(),
     SharedModule.forRoot(),
     UserModule,
     AdminModule,

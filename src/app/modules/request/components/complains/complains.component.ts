@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { ToastsManager } from 'ng2-toastr/src/toast-manager';
 
 @Component({
   selector: 'hr-complains',
@@ -12,7 +13,9 @@ export class ComplainsComponent implements OnInit {
   description: string;
   submittedBy: string;
   
-  constructor() { }
+  constructor(private toast: ToastsManager, private vcr: ViewContainerRef) {
+    this.toast.setRootViewContainerRef(this.vcr);
+   }
 
   ngOnInit() {
      var actualUser = JSON.parse(localStorage.getItem('actualUser'));
@@ -20,7 +23,7 @@ export class ComplainsComponent implements OnInit {
   }
   
   sendComplain(){
-  
+      this.toast.success('Queja Sometida Correctamente!, Le daremos seguimiento.', 'Gracias por su Envio');
   }
 
 }

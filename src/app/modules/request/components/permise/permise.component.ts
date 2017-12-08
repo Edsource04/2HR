@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ToastsManager } from 'ng2-toastr/src/toast-manager';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 
 @Component({
   selector: 'hr-permise',
@@ -16,7 +17,9 @@ export class PermiseComponent implements OnInit {
   leaveDate: Date;
   
   
-  constructor() { }
+  constructor(private toast: ToastsManager, private vcr: ViewContainerRef) {
+    this.toast.setRootViewContainerRef(this.vcr);
+   }
 
   ngOnInit() {
     var actualUser = JSON.parse(localStorage.getItem('actualUser'));
@@ -24,7 +27,7 @@ export class PermiseComponent implements OnInit {
   }
   
   sendRequest(){
-    
+      this.toast.success('Hemos Recivido su Peticion, Gracias', 'Peticion!!');
   }
 
 }
