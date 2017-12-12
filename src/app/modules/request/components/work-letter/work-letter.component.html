@@ -1,0 +1,40 @@
+<div class="container">
+   <h2>Carta de Trabajo</h2>
+   <hr/>
+   <div class="row">
+       <div class="col-sm-12">
+          <form class="form-horizontal">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="employeeNumber" class="label-control">No. Empleado</label>
+                        <input type="text" name="employeeNumber" class="form-control" [(ngModel)]="employeeNumber">
+                     </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="submittedBy" class="label-control">Requerido Por</label>
+                        <input type="text" name="submittedBy" class="form-control" [(ngModel)]="submittedBy" [disabled]>
+                     </div>
+                </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="description" class="label-control">Descripcion</label>
+                        <textarea class="form-control" cols="30" rows="10" [(ngModel)] = "description" name="description"></textarea>
+                    </div>
+               </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                         <button class="btn btn-primary" type="submit" (click)="sendRequest()">Enviar Solicitud</button>
+                    </div>
+                </div>
+            </div>
+
+          </form>
+       </div>
+   </div>
+</div>

@@ -1,3 +1,4 @@
+import { MessageModule } from './modules/message/message.module';
 import { RequestModule } from './modules/request/request.module';
 import { EmployeeModule } from './modules/employee/employee.module';
 import { AdminModule } from './modules/admin/admin.module';
@@ -38,6 +39,7 @@ import { NotFoundComponent } from './components/not-found-component/not-found-co
     BrowserAnimationsModule,
     ToastModule.forRoot(),
     SharedModule.forRoot(),
+    MessageModule,
     UserModule,
     AdminModule,
     EmployeeModule,

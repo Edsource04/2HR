@@ -6,11 +6,13 @@ import { MessageListComponent } from './components/message-list/message-list.com
 import { SendFormComponent } from './components/send-form/send-form.component';
 import { MessageViewComponent } from './components/message-view/message-view.component';
 import { MessageComponent } from './components/message/message.component';
+import { MessageRoutingModule } from './message.routing';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    MessageRoutingModule
   ],
   declarations: [MessageListComponent, SendFormComponent, MessageViewComponent, MessageComponent],
   exports: [MessageListComponent, SendFormComponent, MessageViewComponent, MessageComponent]

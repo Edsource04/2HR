@@ -51,7 +51,10 @@ const routes: Routes = [
       },
       {
         path: 'employees', loadChildren: '../employee/employee.module#EmployeeModule'
-      }
+      },
+      {
+        path: 'messages', loadChildren: '../message/message.module#MessageModule'
+     },
     ]
   }
 ];

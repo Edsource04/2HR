@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./message.component.css']
 })
 export class MessageComponent implements OnInit {
-
+  sendAMessage: boolean = false;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  compose(){
+    this.sendAMessage = true;
   }
 
 }

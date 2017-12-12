@@ -2,27 +2,27 @@
    <div class="row">
      <div class="col-sm-12">
      <table class="table">
-        <thead class="thead-inverse">    
-          <tr>      
-           <th>#</th>     
-           <th>Numero de Vacante</th>      
-           <th>Categoria</th>      
-           <th>Correo</th>    
+        <thead class="thead-inverse">
+          <tr>
+           <th>#</th>
+           <th>Numero de Vacante</th>
+           <th>Categoria</th>
+           <th>Correo</th>
            <th>Nombres</th>
            <th>Telefono</th>
            <th>Acciones</th>
-          </tr> 
-        </thead>  
-        <tbody>    
-         <tr *ngFor="let app of applications; let index=index;">      
-          <th scope="row">{{index + 1}}</th>      
-          <td>{{app.vacantNumber | uppercase}}</td>      
-          <td>{{app.category}}</td>      
-          <td>{{app.email}}</td>   
+          </tr>
+        </thead>
+        <tbody>
+         <tr *ngFor="let app of applications; let index=index;">
+          <th scope="row">{{index + 1}}</th>
+          <td>{{app.vacantNumber | uppercase}}</td>
+          <td>{{app.category}}</td>
+          <td>{{app.email}}</td>
           <td>{{app.firstName}} {{app.lastName}}</td>
           <td>{{app.telephone}}</td>
           <td><button class="btn btn-primary btn-block" (click)="viewApplication(app._id)">Ver Applicacion</button></td>
-         </tr>  
+         </tr>
         </tbody>
       </table>
       </div>

@@ -9,13 +9,13 @@ import { MessageViewComponent} from './components/message-view/message-view.comp
 
 const routes: Routes = [
   {
-    path: '', component: MessageComponent 
+    path: '', component: MessageComponent
   },
   {
     path: 'send', component: SendFormComponent
   },
   {
-      path: 'messages', component: MessageListComponent
+      path: 'message-list', component: MessageListComponent
   },
   {
       path: 'details/:id', component: MessageViewComponent

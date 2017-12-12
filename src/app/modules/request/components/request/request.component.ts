@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestComponent implements OnInit {
   
-  formType: string[] = ['Seleccione el Tipo..','Vacaciones', 'Licencia', 'Permiso', 'Queja'];
+  formType: string[] = ['Seleccione el Tipo..','Vacaciones', 'Licencia', 'Permiso', 'Queja', 'Carta de Trabajo'];
   form: string;
   submittedBy: string;
 

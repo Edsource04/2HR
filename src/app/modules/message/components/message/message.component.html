@@ -1,3 +1,10 @@
-<p>
-  message works!
-</p>
+<div class="container">
+   <div class="row">
+       <div class="col-sm-12">
+          <h2>Mensajes</h2>
+          <hr>
+          <button class="btn btn-default" (click)="compose()" type="button" *ngIf="!sendAMessage">Nuevo Mensaje</button>
+          <hr-send-form *ngIf="sendAMessage"></hr-send-form>
+       </div>
+   </div>
+</div>

@@ -3,27 +3,27 @@
   <div class="row">
     <div class="col-sm-12">
     <table class="table table-hover">
-       <thead>    
-         <tr>      
-          <th scope="col">#</th>     
-          <th scope="col">Nombre</th>      
-          <th scope="col">Manager</th>      
-          <th scope="col">Departamento</th>    
+       <thead>
+         <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Manager</th>
+          <th scope="col">Departamento</th>
           <th scope="col">Contradado En</th>
           <th scope="col">Telefono</th>
           <th scope="col">Acciones</th>
-         </tr> 
-       </thead>  
-       <tbody>    
-        <tr *ngFor="let emp of employees; let index=index;">      
-         <th scope="row">{{index + 1}}</th>      
-         <td>{{emp.firstName}} {{emp.lastName}}</td>      
-         <td>{{emp.department.manager}}</td>      
-         <td>{{emp.department.name}}</td>   
+         </tr>
+        </thead>
+       <tbody>
+        <tr *ngFor="let emp of employees; let index=index;">
+         <th scope="row">{{index + 1}}</th>
+         <td>{{emp.firstName}} {{emp.lastName}}</td>
+         <td>{{emp.department.manager}}</td>
+         <td>{{emp.department.name}}</td>
          <td>{{emp.hiredDate | date}}</td>
          <td>{{emp.telephone}}</td>
          <td><button class="btn btn-primary btn-block" (click)="details(emp._id)">Detalles</button></td>
-        </tr>  
+        </tr>
        </tbody>
      </table>
      </div>

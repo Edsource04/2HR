@@ -11,6 +11,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { LicenseComponent } from './components/license/license.component';
 import { PermiseComponent } from './components/permise/permise.component';
 import { ComplainsComponent } from './components/complains/complains.component';
+import { WorkLetterComponent } from './components/work-letter/work-letter.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { ComplainsComponent } from './components/complains/complains.component';
     RequestRoutingModule,
     SharedModule
   ],
-  declarations: [RequestComponent, VacationFormComponent, SendFormComponent, LicenseComponent, PermiseComponent, ComplainsComponent]
+  declarations: [RequestComponent, VacationFormComponent, SendFormComponent, LicenseComponent, PermiseComponent, ComplainsComponent, WorkLetterComponent]
 })
 export class RequestModule { }
