@@ -55,6 +55,9 @@ const routes: Routes = [
       {
         path: 'messages', loadChildren: '../message/message.module#MessageModule'
      },
+     {
+       path: 'amonestaciones', loadChildren: '../strike/strike.module#StrikeModule'
+     }
     ]
   }
 ];

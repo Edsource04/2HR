@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StrikeModule } from './modules/strike/strike.module'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,7 +44,8 @@ import { NotFoundComponent } from './components/not-found-component/not-found-co
     UserModule,
     AdminModule,
     EmployeeModule,
-    RequestModule
+    RequestModule,
+    StrikeModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
