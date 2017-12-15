@@ -4,6 +4,9 @@ import { Injectable } from '@angular/core';
 import { Employee } from './../models/employee';
 import { Observable } from 'rxjs/Observable';
 
+import { of } from 'rxjs/observable/of';
+import { tap, map, catchError, filter } from 'rxjs/operators';
+
 
 @Injectable()
 export class EmployeeService {
@@ -52,6 +55,15 @@ export class EmployeeService {
     });
 
     return employees;
+  }
+
+  getEmployee(empp: string): Observable<Employee[]>{
+    if(!empp.trim()){
+      return of([]);
+    }
+       console.log(this.getEmployees());
+    return this.getEmployees().map(emp => emp.filter( e => e._id === empp));
+
   }
 
 }

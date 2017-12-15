@@ -1,5 +1,36 @@
-<p>
-  search-strike works!
-</p>
-<hr-strike-form></hr-strike-form>
-<hr-strike-list></hr-strike-list>
+<div class="container">
+ <h2>Amonestaciones</h2>
+ <hr>
+ <div class="row">
+     <div class="col-sm-12" >
+      <form class="form-inline" #searchForm="ngForm">
+        <div class="form-group">
+          <label for="searchEmp" class="sr-only">Buscar Empleado</label>
+          <input type="text" readonly class="form-control-plaintext" id="searchEmp" name="searchEmp" value="Buscar Empleado: ">
+        </div>
+        <div class="form-group mx-sm-3">
+          <label for="" class="sr-only">No. Empleado</label>
+          <input type="text" class="form-control" id="empNumber" required placeholder="Numero de Empleado" name="empNumber" [(ngModel)]="empNumber" #noEmp="ngModel" (keyup)="search(noEmp.value)">
+        </div>
+        <button type="button" class="btn btn-primary btn-lg" [disabled]="!searchForm.valid && !searchForm.dirty" (click)="search(noEmp.value)">Buscar</button>
+      </form>
+      <br>
+     </div>
+ </div>
+ <div class="row" *ngIf="!employeeSelected">
+  <div class="col-sm-12" *ngIf="employees$">
+    <ul class="search-result">
+      <li *ngFor="let emp of employees$ | async">
+          <a (click)="getEmployee(emp)">
+              {{emp.firstName}} {{emp.lastName}}
+          </a>
+      </li>
+   </ul>
+   </div>
+  </div>
+   <div class="row">
+       <hr-strike-form [data]="selectedEmployee" ></hr-strike-form>
+   </div>
+ 
+</div>
+

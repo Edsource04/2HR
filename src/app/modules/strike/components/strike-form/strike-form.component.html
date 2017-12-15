@@ -1,3 +1,61 @@
-<p>
-  strike-form works!
-</p>
+<div class="container" *ngIf="employee">
+  <div class="row">
+     <div class="col-sm-12">
+         <form class="form-horizontal" #strikeForm="ngForm">
+             <div class="row">
+                 <div class="col-sm-4 col-xs-12">
+                     <label for="fullname" class="labe-control">Nombre del Empleado</label>
+                     <input type="text" class="form-control" [(ngModel)]="fullname" disabled name="fullname">
+                 </div>
+                 <div class="col-sm-4 col-xs-12">
+                    <label for="position" class="labe-control">Posicion</label>
+                    <input type="text" class="form-control" [(ngModel)]="employee.position" disabled name="position">
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <label for="manager" class="labe-control">Supervisor</label>
+                    <input type="text" class="form-control" [(ngModel)]="employee.department.manager" disabled name="manager">
+                </div>
+             </div>
+             <div class="row">
+                <div class="col-sm-12">
+                    <fieldset class="scheduler-border">
+                        <legend class="scheduler-border">Informacion de Amonestacion</legend>
+                        <div class="form-group">
+                            <label for="dateIn" class="label-control">Fecha </label>
+                            <input type="text" class="form" disabled [ngModel]="dateIn | date" name="dateIn">
+                        </div>
+                        <div class="form-group">
+                            <label for="strikeLevel" class="label-control">Nivel de Amonestacion</label>
+                            <select class="form-control" name="strikeLevel" #selectLevel (change)="selectL(selectLevel.value)">
+                                <option value="Seleccionar..." selected >Seleccionar...</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select> 
+                        </div>
+                        <div class="form-group">
+                        <label for="strikeType" class="label-control">Tipo de Amonestacion</label>
+                        <select class="form-control" name="strikeLevel" #selectType (change)="selectT(selectType.value)">
+                            <option value="Seleccionar..." selected >Seleccionar...</option>
+                            <option value="Comportamiento">Comportamiento</option>
+                            <option value="Asistencia">Asistencia</option>
+                            <option value="Violacion de Politicas de la Empresa">Violacion / Politicas</option>
+                            <option value="Negligencias Laborales">Negligencia Laboral</option>
+                            <option value="Calidad de Servicio">Calidad de Servicio</option>
+                        </select> 
+                      </div>
+                      <div class="form-group">
+                          <label for="description" class="label-control">Descripcion</label>
+                          <textarea class="form-control" cols="30" rows="10" [(ngModel)] = "description" name="description"></textarea>
+                      </div>
+                      <div class="form-group">
+                          <button class="btn btn-success" (click)="submitStrike()" type="button">Guardar</button>
+                      </div>
+                    </fieldset>
+                </div>
+             </div>
+         </form>
+     </div>
+  </div>
+</div>
+
